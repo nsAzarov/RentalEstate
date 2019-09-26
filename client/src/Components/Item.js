@@ -1,23 +1,18 @@
 import React, {useState, useEffect} from 'react';
-import logo from './logo.svg';
-import './App.css';
 import Axios from 'axios';
 
-function App() {
+function Item() {
 	const [user, setUser] = useState(null);
 	useEffect(() => {
 		Axios.get('/api')
 		.then(response => setUser(response.data))
 	}, [])
 	return user && (
-		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-					<p>
-					{JSON.stringify(user)}
-					</p>
+		<div className="Item">
+			<header className="Item-header">
+				<p>{JSON.stringify(user)}</p>
 				<a
-				className="App-link"
+				className="Item-link"
 				href="https://reactjs.org"
 				target="_blank"
 				rel="noopener noreferrer"
@@ -29,4 +24,4 @@ function App() {
 	);
 }
 
-export default App;
+export default Item;
