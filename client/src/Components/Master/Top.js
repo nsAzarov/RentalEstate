@@ -1,11 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
+import landscape from '../../png/landscape.jpg'
 
 const TopSection = styled.div`
-    height: 400px;
+    height: 500px;
     width: 100%;
-    background: grey;
+    background: url(${landscape});
+    background-size: cover;
 `;
 
 const Header = styled.div`
@@ -25,6 +27,7 @@ const Logo = styled.div`
     display: flex;
     align-items: center;
     margin-right: 50px;
+    cursor: pointer;
     img {
         height: 48px;
     }
@@ -35,6 +38,51 @@ const Logo = styled.div`
     }
 `;
 
+const Form = styled.form`
+    height: 80px;
+    width: 1050px;
+    background: whitesmoke;
+    margin: auto;
+    margin-top: 280px;
+    border-radius: 5px;
+    display: flex;
+    position: relative;
+    .dropdown {
+        margin: 15px 0 0 20px;
+        height: 16px;
+        width: 150px;
+        border: 1px solid black;
+        border-radius: 3px;
+        padding: 16px;
+        cursor: pointer;
+        .dropdown-menu {
+            margin: 30px;
+            margin-left: 0;
+            padding-left: 0;
+            display: none;
+            li {
+                height: 16px;
+                width: 150px;
+                background: whitesmoke;
+                list-style-type: none;
+            }
+        }
+    }
+    button {
+        position: absolute;
+        right: 0;
+        height: 80px;
+        width: 100px;
+        font-size: 16px;
+        background: #b3b3b3;
+        border: none;
+        border-radius: 3px;
+        transition: .2s;
+        &:hover {
+            background: #3C90BE;
+        }
+    }
+`;
 
 const Top = () => {
     return(
@@ -50,6 +98,39 @@ const Top = () => {
                 <Link>Luxury Apartments</Link>
                 <Link>Agencies</Link>
             </Header>
+            <Form>
+                <div className="dropdown form-control">
+                    <div data-toggle="dropdown" className="filter-menu-item" id="actions" value="all-actions">All Actions</div>
+                    <ul className="dropdown-menu" id="dropdown-actions">
+                        <li>All Actions</li>
+                        <li>Properties Sale</li>
+                        <li>Israel Rentals</li>
+                        <li>Luxary Apartments</li>
+                        <li>New Projects</li>
+                    </ul>
+                </div>
+                <div className="dropdown form-control">
+                    <div data-toggle="dropdown" className="filter-menu-item" id="types" value="all-types">All Types</div>
+                    <ul className="dropdown-menu" id="dropdown-types">
+                        <li>All Actions</li>
+                        <li>Properties Sale</li>
+                        <li>Israel Rentals</li>
+                        <li>Luxary Apartments</li>
+                        <li>New Projects</li>
+                    </ul>
+                </div>
+                <div className="dropdown form-control">
+                    <div data-toggle="dropdown" className="filter-menu-item" id="cities" value="all-cities">Select City</div>
+                    <ul className="dropdown-menu" id="dropdown-cites">
+                        <li>All Actions</li>
+                        <li>Properties Sale</li>
+                        <li>Israel Rentals</li>
+                        <li>Luxary Apartments</li>
+                        <li>New Projects</li>
+                    </ul>
+                </div>
+                <button type="submit">Search</button>
+            </Form>
         </TopSection>
     );
 }

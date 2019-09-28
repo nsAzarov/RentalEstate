@@ -13,21 +13,22 @@ const FooterWidgetArea = styled.div`
     justify-content: center;
 `;
 
+const WidgetHeader = styled.h3`
+    color: #f0f0f0;
+    text-indent: 10px;
+    margin-bottom: 10px;
+`;
+
 const FirstWidget = styled.div`
-    h3 {
-        color: #f0f0f0;
-    }
     p {
         color: #72777F;
         line-height: 1.5;
+        text-indent: 10px;
     }
     padding: 20px;
     width: 285px;
 `;
 const SecondWidget = styled.div`
-    h3 {
-        color: #f0f0f0;
-    }
     ul {
         a {
             color: #72777F;
@@ -81,7 +82,7 @@ const Bottom = () => {
         <BottomSection>
             <FooterWidgetArea>
                 <FirstWidget>
-                    <h3>Looking to buy, rent, sell or rent a property?</h3>
+                    <WidgetHeader>Looking to buy, rent, sell or rent a property?</WidgetHeader>
                     <p>A move offers a wide choice of ads real estate for sale and properties for sale: apartments and houses for sale, apartments for sale, villas and houses, penthouses, plots, apartment for sale, brokering apartments, apartments without mediation, second-hand apartments for sale and more.</p>
                     <SocialSidebar>
                         <SocialLink>
@@ -99,7 +100,7 @@ const Bottom = () => {
                     </SocialSidebar>
                 </FirstWidget>
                 <SecondWidget>
-                    <h3>Assets by Region</h3>
+                    <WidgetHeader>Assets by Region</WidgetHeader>
                     <ul>
                         <Link to='/'>Tel Aviv – Yafo</Link>
                         <Link to='/'>Netania & Surroundings</Link>
