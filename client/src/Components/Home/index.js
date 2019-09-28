@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import styled from 'styled-components';
+import Top from '../Master/Top';
+import Bottom from '../Master/Bottom';
 import Menu from './Menu';
 import Item from './Item';
 
@@ -10,10 +12,14 @@ const HomeContent = styled.div`
 
 const Home = () => {
     return (
-        <HomeContent>
-            <Menu />
-            <Item /><Item /><Item /><Item /><Item /><Item /><Item /><Item /><Item /><Item /><Item /><Item /><Item /><Item />
-        </HomeContent>
+        <Fragment>
+            <Top />
+            <HomeContent>
+                <Menu />
+                <Item /><Item /><Item /><Item /><Item /><Item /><Item /><Item /><Item /><Item /><Item /><Item /><Item /><Item />
+            </HomeContent>
+            <Bottom />
+        </Fragment>
     );
 }
 
