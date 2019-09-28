@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const cors = require('cors');
 const axios = require('axios');
 
@@ -6,10 +7,18 @@ const app = express();
 
 app.use(cors());
 
-app.get('/api', (req, res) => {
-    const user = req.query.user || 'nsAzarov';
-    axios.get(`https://api.github.com/users/${user}`)
-        .then(response => res.json({user: response.data}));
+const db = require('./config/keys').mongoURI;
+
+mongoose
+    .connect(db, { useNewUrlParser: true })
+    .then(() => console.log('MongoDB Connected'))
+    .catch(err => console.log(err));
+
+const Apartment = require('./models/Apartment');
+
+app.get('/Home', (req, res) => {
+    Apartment.find({})
+        .then(apartments => res.json(apartments));
 });
 
 if(process.env.NODE_ENV === "production") {
