@@ -5,7 +5,7 @@ import bathtub from '../../png/bathtub.png';
 import bed from '../../png/bed.png';
 import group from '../../png/group.png';
 
-const ItemBlock = styled.div`
+const ItemBlock = styled(Link)`
 	height: 380px;
 	width: 360px;
 	background: whitesmoke;
@@ -32,7 +32,6 @@ const ImageSection = styled.div`
 const Title = styled.h1`
 	font-size: 18px;
 	margin: 5px 0 10px 5px;
-	color: #323840;
     text-overflow: ellipsis;
     overflow: hidden;
     -webkit-line-clamp: 1;
@@ -46,7 +45,6 @@ const Description = styled.h2`
 	font-size: 12px;
 	text-indent: 5px;
 	font-style: italic;
-	color: #323840;
     text-overflow: ellipsis;
     overflow: hidden;
     -webkit-line-clamp: 3;
@@ -85,7 +83,7 @@ const Info = styled.div`
 const Item = (props) => {
 	let img = require(`../../png/${props.item.images[0]}`);
 	return (
-		<ItemBlock>
+		<ItemBlock to="/Apartment">
 			<ImageSection backgroundImage={img} alt=""/>
 			<City>{props.item.city}</City>
 			<Title>{props.item.heading}</Title>

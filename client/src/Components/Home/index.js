@@ -1,6 +1,7 @@
 import React, {useState, useEffect, Fragment} from 'react';
 import styled from 'styled-components';
 import Top from '../Master/Top';
+import Search from '../Master/Search';
 import Bottom from '../Master/Bottom';
 import Signature from '../Master/Signature';
 import Menu from './Menu';
@@ -23,6 +24,7 @@ const Home = () => {
     return (
         <Fragment>
             <Top />
+            <Search />
             <HomeContent>
                 <Menu />
                 {apartments.map((element, i) => {
