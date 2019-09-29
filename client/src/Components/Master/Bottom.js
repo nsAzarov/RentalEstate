@@ -17,6 +17,7 @@ const WidgetHeader = styled.h3`
     color: #f0f0f0;
     text-indent: 10px;
     margin-bottom: 10px;
+    font-size: 18px;
 `;
 
 const FirstWidget = styled.div`
@@ -24,6 +25,7 @@ const FirstWidget = styled.div`
         color: #72777F;
         line-height: 1.5;
         text-indent: 10px;
+        font-size: 14px;
     }
     padding: 20px;
     width: 285px;
@@ -36,6 +38,7 @@ const SecondWidget = styled.div`
             line-height: 1.5;
             text-decoration: none;
             transition: 0.25s;
+            font-size: 14px;
             &:hover {
                 color: #3C90BE;
             }

@@ -40,10 +40,10 @@ const Logo = styled.div`
 
 const Form = styled.form`
     height: 80px;
-    width: 1050px;
+    width: 1000px;
     background: whitesmoke;
     margin: auto;
-    margin-top: 280px;
+    margin-top: 290px;
     border-radius: 5px;
     display: flex;
     position: relative;
@@ -92,11 +92,11 @@ const Top = () => {
                     <img src={require('../../png/key.png')} alt=""/>
                     <h1>Rental Estate</h1>
                 </Logo>
-                <Link>Sale Properties</Link>
-                <Link>Rentals</Link>
-                <Link>Vacation Properties</Link>
-                <Link>Luxury Apartments</Link>
-                <Link>Agencies</Link>
+                <Link to='/'>Sale Properties</Link>
+                <Link to='/'>Rentals</Link>
+                <Link to='/'>Vacation Properties</Link>
+                <Link to='/'>Luxury Apartments</Link>
+                <Link to='/'>Agencies</Link>
             </Header>
             <Form>
                 <div className="dropdown form-control">
