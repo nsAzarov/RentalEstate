@@ -7,9 +7,9 @@ import group from '../../png/group.png';
 
 const ItemBlock = styled(Link)`
 	height: 380px;
-	width: 360px;
+    width: 23.8%;
+    margin: 0.6%;
 	background: whitesmoke;
-	margin: 10px;
 	position: relative;
 `;
 
@@ -24,7 +24,7 @@ const City = styled.div`
 
 const ImageSection = styled.div`
 	height: 250px;
-	width: 360px;
+	width: 100%;
 	background: url(${props => props.backgroundImage}) no-repeat;
 	background-size: cover;
 `;

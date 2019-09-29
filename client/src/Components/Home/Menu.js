@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 const MenuContent = styled.div`
     height: 380px;
-    width: 360px;
+    width: 23.8%;
+    margin: 0.6%;
     background: wheat;
-    margin: 10px;
 `;
 
 const Menu = () => {
