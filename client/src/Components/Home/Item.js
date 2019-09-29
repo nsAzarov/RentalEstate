@@ -10,6 +10,16 @@ const ItemBlock = styled.div`
 	width: 360px;
 	background: whitesmoke;
 	margin: 10px;
+	position: relative;
+`;
+
+const City = styled.div`
+	position: absolute;
+	right: 0;
+	top: 180px;
+	background: #f0cb86;
+	padding: 8px 20px 8px 8px;
+	border-radius: 1px;
 `;
 
 const ImageSection = styled.div`
@@ -77,6 +87,7 @@ const Item = (props) => {
 	return (
 		<ItemBlock>
 			<ImageSection backgroundImage={img} alt=""/>
+			<City>{props.item.city}</City>
 			<Title>{props.item.heading}</Title>
 			<Description>{props.item.description}</Description>
 			<Info>
@@ -92,7 +103,7 @@ const Item = (props) => {
 					<img src={group} alt=""/>
 					{props.item.guests}
 				</div>
-				<div id="price">53 268 $/n</div>
+				<div id="price">{(props.item.price).toLocaleString('ru-RU')}&#8362;</div>
 			</Info>
 		</ItemBlock>
 	);

@@ -3,6 +3,14 @@ const Schema = mongoose.Schema;
 
 const ApartmentSchema = new Schema({
     _id: mongoose.Schema.Types.ObjectId,
+    city: {
+        type: String,
+        required: true
+    },
+    price: {
+        type: Number,
+        required: true
+    },
     heading: {
         type: String,
         required: true
