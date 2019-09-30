@@ -1,7 +1,7 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import landscape from '../../png/landscape.jpg'
+import {device} from '../../services/device'
 
 const SearchSection = styled.div`
     height: 420px;
@@ -14,14 +14,22 @@ const SearchSection = styled.div`
 const Form = styled.form`
     height: 80px;
     width: 1000px;
+    @media ${device.tablet} {
+        width: 700px;
+        left: 50%;
+        margin-left: -350px;
+    }
+    @media ${device.laptop} {
+        width: 1000px;
+        left: 50%;
+        margin-left: -500px;
+	}
     background: whitesmoke;
     margin: auto;
     border-radius: 5px;
     display: flex;
     position: absolute;
     top: 290px;
-    left: 50%;
-    margin-left: -500px;
     .dropdown {
         margin: 15px 0 0 20px;
         height: 16px;
