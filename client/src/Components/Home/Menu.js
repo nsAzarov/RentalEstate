@@ -20,8 +20,8 @@ const MenuContent = styled.div`
         height: 380px;
 	}
     @media ${device.desktop} {
-        width: 23.8%;
-		margin: 0.6%;
+        width: 19.2%;
+		margin: 0.4%;
 	}
 	@media ${device.desktopL} {
         width: 19.2%;
