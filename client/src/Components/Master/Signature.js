@@ -5,9 +5,9 @@ const SignatureSection = styled.div`
     height: 50px;
     width: 100%;
     background: #323840;
-    color: #72777F;
     center {
         padding: 16px;
+        color: black;
     }
 `;
 

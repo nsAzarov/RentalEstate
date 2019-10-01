@@ -1,32 +1,73 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
+import {device} from '../../services/device';
 
 const Header = styled.div`
     width: 100%;
     background: white;
     display: flex;
     align-content: center;
-    a {
-        padding: 30px 16px;
-        text-decoration: none;
-        color: #72777F;
-        font-size: 17px;
+    @media ${device.tablet} {
+        a {
+            padding: 22px 10px;
+            text-decoration: none;
+            color: #72777F;
+            font-size: 14px;
+        }
+    }
+    @media ${device.laptop} {
+        a {
+            padding: 22px 10px;
+            text-decoration: none;
+            color: #72777F;
+            font-size: 14px;
+        }
+    }
+    @media ${device.laptopL} {
+        a {
+            padding: 30px 16px;
+            text-decoration: none;
+            color: #72777F;
+            font-size: 17px;
+        }
     }
 `;
 
 const Logo = styled.div`
     display: flex;
     align-items: center;
-    margin-right: 50px;
     cursor: pointer;
-    img {
-        height: 48px;
+    @media ${device.tablet} {
+        margin-right: 30px;
+        img {
+            height: 40px;
+        }
+        h1 {
+            font-size: 36px;
+            color: #323840;
+            font-family: 'Josefin Sans', sans-serif;
+        }
     }
-    h1 {
-        color: #323840;
-        font-size: 42px;
-        font-family: 'Josefin Sans', sans-serif;
+    @media ${device.laptop} {
+        margin-right: 30px;
+        img {
+            height: 40px;
+        }
+        h1 {
+            font-size: 36px;
+            color: #323840;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+    }
+    @media ${device.laptopL} {
+        margin-right: 50px;
+        img {
+            height: 48px;
+        }
+        h1 {
+            font-size: 42px;
+        }
     }
 `;
 

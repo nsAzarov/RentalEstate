@@ -4,6 +4,21 @@ import landscape from '../../png/landscape.jpg'
 import {device} from '../../services/device'
 
 const SearchSection = styled.div`
+    @media ${device.tablet} {
+        height: 250px;
+    }
+    @media ${device.laptop} {
+        height: 280px;
+    }
+    @media ${device.laptopL} {
+        height: 380px;
+    }
+    @media ${device.desktop} {
+        height: 480px;
+    }
+    @media ${device.desktopL} {
+        height: 530px;
+    }
     height: 420px;
     width: 100%;
     background: url(${landscape});
@@ -18,25 +33,58 @@ const Form = styled.form`
         width: 700px;
         left: 50%;
         margin-left: -350px;
+        height: 48px;
+        top: 170px;
     }
     @media ${device.laptop} {
         width: 1000px;
         left: 50%;
         margin-left: -500px;
-	}
+        top: 200px;
+    }
+    @media ${device.laptopL} {
+        top: 270px;
+    }
+    @media ${device.desktop} {
+        top: 350px;
+        height: 80px;
+    }
+    @media ${device.desktopL} {
+        top: 380px;
+    }
     background: whitesmoke;
     margin: auto;
     border-radius: 5px;
     display: flex;
     position: absolute;
-    top: 290px;
     .dropdown {
-        margin: 15px 0 0 20px;
-        height: 16px;
+        @media ${device.tablet} {
+            margin: 8px 0 0 12px;
+            padding: 8px;
+            font-size: 12px;
+            height: 14px;
+            width: 120px;
+        }
+        @media ${device.laptop} {
+            margin: 10px 0 0 15px;
+            padding: 10px;
+            font-size: 14px;
+            height: 16px;
+            width: 150px;
+        }
+        @media ${device.laptopL} {
+            margin: 10px 0 0 15px;
+            padding: 10px;
+            font-size: 14px;
+        }
+        @media ${device.desktop} {
+            margin: 15px 0 0 20px;
+            padding: 16px;
+            font-size: 16px;
+        }
         width: 150px;
         border: 1px solid black;
         border-radius: 3px;
-        padding: 16px;
         cursor: pointer;
         .dropdown-menu {
             margin: 30px;
@@ -52,11 +100,28 @@ const Form = styled.form`
         }
     }
     button {
+        @media ${device.tablet} {
+            font-size: 12px;
+            height: 48px;
+            width: 60px;
+        }
+        @media ${device.laptop} {
+            font-size: 14px;
+            height: 58px;
+            width: 80px;
+        }
+        @media ${device.laptopL} {
+            font-size: 14px;
+            height: 58px;
+            width: 80px;
+        }
+        @media ${device.desktop} {
+            font-size: 16px;
+            height: 80px;
+            width: 100px;
+        }
         margin-left: auto;
         right: 0;
-        height: 80px;
-        width: 100px;
-        font-size: 16px;
         background: #b3b3b3;
         border: none;
         border-radius: 3px;
