@@ -5,7 +5,7 @@ import {device} from '../../services/device'
 
 const SearchSection = styled.div`
     @media ${device.tablet} {
-        height: 250px;
+        height: 220px;
     }
     @media ${device.laptop} {
         height: 280px;
@@ -34,7 +34,7 @@ const Form = styled.form`
         left: 50%;
         margin-left: -350px;
         height: 48px;
-        top: 170px;
+        top: 150px;
     }
     @media ${device.laptop} {
         width: 1000px;

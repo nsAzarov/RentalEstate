@@ -7,10 +7,9 @@ import group from '../../png/group.png';
 import {device} from '../../services/device';
 
 const ItemBlock = styled(Link)`
-	height: 380px;
 	@media ${device.tablet} {
-        width: 23.8%;
-		margin: 0.6%;
+        width: 31.5%;
+		margin: 0.9%;
 		height: 280px;
 	}
 	@media ${device.laptop} {
@@ -40,8 +39,8 @@ const City = styled.div`
 	right: 0;
 	@media ${device.tablet} {
 		top: 135px;
-		padding: 6px 16px 6px 6px;
-		font-size: 15px;
+		padding: 5px 12px 5px 5px;
+		font-size: 14px;
 	}
 	@media ${device.laptop} {
 		top: 135px;
@@ -58,9 +57,8 @@ const City = styled.div`
 `;
 
 const ImageSection = styled.div`
-	height: 250px;
 	@media ${device.tablet} {
-		height: 180px;
+		height: 190px;
 	}
 	@media ${device.laptop} {
 		height: 180px;
@@ -75,7 +73,7 @@ const ImageSection = styled.div`
 
 const Title = styled.h1`
 	@media ${device.tablet} {
-		font-size: 16px;
+		font-size: 13px;
 		margin: 5px 0 5px 5px;
 	}
 	@media ${device.laptop} {
@@ -96,7 +94,7 @@ const Title = styled.h1`
 
 const Description = styled.h2`
 	@media ${device.tablet} {
-		font-size: 10px;
+		font-size: 9.5px;
 	}
 	@media ${device.laptop} {
 		font-size: 10px;
@@ -118,9 +116,11 @@ const Description = styled.h2`
 const Info = styled.div`
 	@media ${device.tablet} {
 		margin-top: 0px;
+		height: 30px;
 	}
 	@media ${device.laptop} {
 		margin-top: 0px;
+		height: 40px;
 	}
 	@media ${device.laptopL} {
 		margin-top: 10px;
@@ -137,10 +137,10 @@ const Info = styled.div`
 		align-items: center;
 		font-weight: bold;
 		@media ${device.tablet} {
-			font-size: 14px;
+			font-size: 12px;
 			margin: 0 5px;
 			img {
-				height: 24px;
+				height: 20px;
 				margin-right: 5px;
 			}
 		}
@@ -163,7 +163,7 @@ const Info = styled.div`
 	}
 	#price {
 		@media ${device.tablet} {
-			font-size: 24px;
+			font-size: 20px;
 		}
 		@media ${device.laptop} {
 			font-size: 24px;

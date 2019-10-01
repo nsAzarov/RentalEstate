@@ -10,10 +10,10 @@ const Header = styled.div`
     align-content: center;
     @media ${device.tablet} {
         a {
-            padding: 22px 10px;
+            padding: 20px 10px;
             text-decoration: none;
             color: #72777F;
-            font-size: 14px;
+            font-size: 12px;
         }
     }
     @media ${device.laptop} {
@@ -44,18 +44,20 @@ const Logo = styled.div`
     align-items: center;
     cursor: pointer;
     @media ${device.tablet} {
-        margin-right: 30px;
+        margin-right: 50px;
+        width: 125px;
         img {
             height: 40px;
         }
         h1 {
-            font-size: 36px;
+            font-size: 28px;
             color: #323840;
             font-family: 'Josefin Sans', sans-serif;
         }
     }
     @media ${device.laptop} {
         margin-right: 30px;
+        width: 270px;
         img {
             height: 40px;
         }
@@ -67,6 +69,7 @@ const Logo = styled.div`
     }
     @media ${device.laptopL} {
         margin-right: 50px;
+        width: 310px;
         img {
             height: 48px;
         }
