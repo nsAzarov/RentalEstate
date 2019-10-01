@@ -40,6 +40,7 @@ const Form = styled.form`
         width: 1000px;
         left: 50%;
         margin-left: -500px;
+        height: 58px;
         top: 200px;
     }
     @media ${device.laptopL} {
@@ -50,7 +51,9 @@ const Form = styled.form`
         height: 80px;
     }
     @media ${device.desktopL} {
-        top: 380px;
+        width: 1200px;
+        margin-left: -600px;
+        top: 390px;
     }
     background: whitesmoke;
     margin: auto;

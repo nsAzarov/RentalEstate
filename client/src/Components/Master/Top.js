@@ -32,6 +32,11 @@ const Header = styled.div`
             font-size: 17px;
         }
     }
+    @media ${device.laptopL} {
+        a {
+            padding: 30px 30px;
+        }
+    }
 `;
 
 const Logo = styled.div`
@@ -68,6 +73,9 @@ const Logo = styled.div`
         h1 {
             font-size: 42px;
         }
+    }
+    @media ${device.desktopL} {
+        margin-right: 150px;
     }
 `;
 

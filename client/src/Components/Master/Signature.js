@@ -1,14 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
+import {device} from '../../services/device';
 
 const SignatureSection = styled.div`
-    height: 50px;
+    @media ${device.tablet} {
+        center {
+            padding: 8px;
+            color: black;
+            font-size: 12px;
+        }
+    }
+    @media ${device.laptop} {
+        center {
+            padding: 12px;
+            font-size: 14px;
+        }
+    }
     width: 100%;
     background: #323840;
-    center {
-        padding: 16px;
-        color: black;
-    }
 `;
 
 const Signature = () => {

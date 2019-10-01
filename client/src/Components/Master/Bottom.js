@@ -1,59 +1,94 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
-
-const BottomSection = styled.div`
-    width: 100%;
-    background: #282D33;
-`;
+import {device} from '../../services/device';
 
 const FooterWidgetArea = styled.div`
     margin: auto;
     display: flex;
     justify-content: center;
+    .widget {
+        @media ${device.laptop} {
+            padding: 16px;
+            width: 200px;
+        }
+        @media ${device.laptopL} {
+            padding: 20px;
+            width: 285px;
+        }
+    }
+`;
+
+const BottomSection = styled.div`
+    @media ${device.tablet} {
+        display: none;
+        ${FooterWidgetArea} {
+            display: none;
+        }
+    }
+    @media ${device.laptop} {
+        width: 100%;
+        background: #282D33;
+        display: flex;
+        ${FooterWidgetArea} {
+            display: flex;
+        }
+    }
 `;
 
 const WidgetHeader = styled.h3`
+    @media ${device.laptop} {
+        font-size: 16px;
+        text-indent: 8px;
+        margin-bottom: 8px;
+    }
+    @media ${device.laptopL} {
+        font-size: 18px;
+        text-indent: 10px;
+        margin-bottom: 10px;
+    }
     color: #f0f0f0;
-    text-indent: 10px;
-    margin-bottom: 10px;
-    font-size: 18px;
 `;
 
 const FirstWidget = styled.div`
     p {
+        @media ${device.laptop} {
+            font-size: 12px;
+            line-height: 1.2;
+            text-indent: 8px;
+        }
+        @media ${device.laptopL} {
+            font-size: 14px;
+            line-height: 1.5;
+            text-indent: 10px;
+        }
         color: #72777F;
-        line-height: 1.5;
-        text-indent: 10px;
-        font-size: 14px;
     }
-    padding: 20px;
-    width: 285px;
 `;
 const SecondWidget = styled.div`
     ul {
         a {
+            @media ${device.laptop} {
+                line-height: 1.2;
+                font-size: 12px;
+            }
+            @media ${device.laptopL} {
+                line-height: 1.5;
+                font-size: 14px;
+            }
             color: #72777F;
             display: block;
-            line-height: 1.5;
             text-decoration: none;
             transition: 0.25s;
-            font-size: 14px;
             &:hover {
                 color: #3C90BE;
             }
         }
     }
-    padding: 20px;
-    width: 285px;
 `;
 const ThirdWidget = styled.div`
-    padding: 20px;
-    width: 285px;
 `;
 const FourthWidget = styled.div`
-    padding: 20px;
-    width: 285px;
 `;
 
 const SocialSidebar = styled.div`
@@ -84,8 +119,8 @@ const Bottom = () => {
     return(
         <BottomSection>
             <FooterWidgetArea>
-                <FirstWidget>
-                    <WidgetHeader>Looking to buy, rent, sell or rent a property?</WidgetHeader>
+                <FirstWidget className="widget">
+                    <WidgetHeader>Looking to buy, sell or rent a property?</WidgetHeader>
                     <p>A move offers a wide choice of ads real estate for sale and properties for sale: apartments and houses for sale, apartments for sale, villas and houses, penthouses, plots, apartment for sale, brokering apartments, apartments without mediation, second-hand apartments for sale and more.</p>
                     <SocialSidebar>
                         <SocialLink>
@@ -102,7 +137,7 @@ const Bottom = () => {
                         </SocialLink>
                     </SocialSidebar>
                 </FirstWidget>
-                <SecondWidget>
+                <SecondWidget className="widget">
                     <WidgetHeader>Assets by Region</WidgetHeader>
                     <ul>
                         <Link to='/'>Tel Aviv – Yafo</Link>
@@ -113,8 +148,8 @@ const Bottom = () => {
                         <Link to='/'>Jerusalem</Link>
                     </ul>
                 </SecondWidget>
-                <ThirdWidget></ThirdWidget>
-                <FourthWidget></FourthWidget>
+                <ThirdWidget className="widget"></ThirdWidget>
+                <FourthWidget className="widget"></FourthWidget>
             </FooterWidgetArea>
         </BottomSection>
     );
