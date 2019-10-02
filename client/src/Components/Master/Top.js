@@ -22,35 +22,27 @@ const Header = styled.div`
     @media ${device.mobileL} {
         a {
             padding: 14px 8px;
-            text-decoration: none;
-            color: #72777F;
             font-size: 10px;
-        }
-        a:last-child {
-            display: none;
         }
     }
     @media ${device.tablet} {
         a {
             padding: 20px 10px;
-            text-decoration: none;
-            color: #72777F;
             font-size: 12px;
+        }
+        a:last-child {
+            display: inline-block;
         }
     }
     @media ${device.laptop} {
         a {
             padding: 22px 10px;
-            text-decoration: none;
-            color: #72777F;
             font-size: 14px;
         }
     }
     @media ${device.laptopL} {
         a {
             padding: 30px 16px;
-            text-decoration: none;
-            color: #72777F;
             font-size: 17px;
         }
     }
@@ -78,15 +70,8 @@ const Logo = styled.div`
         }
     }
     @media ${device.mobileL} {
-        margin-right: 4px;
-        width: 85px;
-        img {
-            height: 26px;
-        }
         h1 {
             font-size: 20px;
-            color: #323840;
-            font-family: 'Josefin Sans', sans-serif;
         }
     }
     @media ${device.tablet} {
@@ -97,20 +82,13 @@ const Logo = styled.div`
         }
         h1 {
             font-size: 28px;
-            color: #323840;
-            font-family: 'Josefin Sans', sans-serif;
         }
     }
     @media ${device.laptop} {
         margin-right: 30px;
         width: 270px;
-        img {
-            height: 40px;
-        }
         h1 {
             font-size: 36px;
-            color: #323840;
-            font-family: 'Josefin Sans', sans-serif;
         }
     }
     @media ${device.laptopL} {

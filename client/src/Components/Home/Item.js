@@ -25,7 +25,6 @@ const ItemBlock = styled(Link)`
 	@media ${device.laptop} {
         width: 23.8%;
 		margin: 0.6%;
-		height: 280px;
 	}
 	@media ${device.laptopL} {
         width: 23.8%;
@@ -36,10 +35,6 @@ const ItemBlock = styled(Link)`
         width: 19.2%;
 		margin: 0.4%;
 	}
-	@media ${device.desktopL} {
-        width: 19.2%;
-		margin: 0.4%;
-    }
 	background: whitesmoke;
 	position: relative;
 `;
@@ -62,13 +57,7 @@ const City = styled.div`
 		padding: 5px 12px 5px 5px;
 		font-size: 14px;
 	}
-	@media ${device.tablet} {
-		top: 135px;
-		padding: 5px 12px 5px 5px;
-		font-size: 14px;
-	}
 	@media ${device.laptop} {
-		top: 135px;
 		padding: 6px 16px 6px 6px;
 		font-size: 15px;
 	}
@@ -112,8 +101,6 @@ const Title = styled.h1`
 	@media ${device.mobileL} {
 		font-size: 16px;
 		margin: 0 0 5px 0;
-		-webkit-line-clamp: 2;
-		text-align: center;
 	}
 	@media ${device.tablet} {
 		font-size: 13px;
@@ -122,7 +109,6 @@ const Title = styled.h1`
 	}
 	@media ${device.laptop} {
 		font-size: 16px;
-		margin: 5px 0 5px 5px;
 	}
 	@media ${device.laptopL} {
 		font-size: 18px;
@@ -167,15 +153,9 @@ const Info = styled.div`
 		height: 20px;
 	}
 	@media ${device.mobileL} {
-		margin-top: 0px;
-		height: 30px;
-	}
-	@media ${device.tablet} {
-		margin-top: 0px;
 		height: 30px;
 	}
 	@media ${device.laptop} {
-		margin-top: 0px;
 		height: 40px;
 	}
 	@media ${device.laptopL} {
@@ -201,7 +181,6 @@ const Info = styled.div`
 			}
 		}
 		@media ${device.mobileL} {
-			font-size: 12px;
 			margin: 0 5px;
 			img {
 				height: 20px;
@@ -210,18 +189,14 @@ const Info = styled.div`
 		}
 		@media ${device.tablet} {
 			font-size: 12px;
-			margin: 0 5px;
 			img {
-				height: 20px;
 				margin-right: 5px;
 			}
 		}
 		@media ${device.laptop} {
 			font-size: 14px;
-			margin: 0 5px;
 			img {
 				height: 24px;
-				margin-right: 5px;
 			}
 		}
 		@media ${device.laptopL} {
@@ -229,7 +204,6 @@ const Info = styled.div`
 			margin: 0 10px;
 			img {
 				height: 30px;
-				margin-right: 5px;
 			}
 		}
 	}
@@ -240,7 +214,6 @@ const Info = styled.div`
 		}
 		@media ${device.mobileL} {
 			font-size: 22px;
-			right: 0;
 		}
 		@media ${device.tablet} {
 			font-size: 20px;

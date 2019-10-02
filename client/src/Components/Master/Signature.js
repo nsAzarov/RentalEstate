@@ -10,17 +10,9 @@ const SignatureSection = styled.div`
             font-size: 9px;
         }
     }
-    @media ${device.mobileL} {
-        center {
-            padding: 4px;
-            color: black;
-            font-size: 9px;
-        }
-    }
     @media ${device.tablet} {
         center {
             padding: 8px;
-            color: black;
             font-size: 12px;
         }
     }

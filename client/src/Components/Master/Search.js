@@ -25,7 +25,6 @@ const SearchSection = styled.div`
     @media ${device.desktopL} {
         height: 530px;
     }
-    height: 420px;
     width: 100%;
     background: url(${landscape});
     background-size: cover;
@@ -42,21 +41,17 @@ const Form = styled.form`
     }
     @media ${device.mobileL} {
         width: 400px;
-        left: 50%;
         margin-left: -200px;
-        height: 37px;
         top: 100px;
     }
     @media ${device.tablet} {
         width: 700px;
-        left: 50%;
         margin-left: -350px;
         height: 48px;
         top: 150px;
     }
     @media ${device.laptop} {
         width: 1000px;
-        left: 50%;
         margin-left: -500px;
         height: 58px;
         top: 200px;
@@ -87,15 +82,12 @@ const Form = styled.form`
             width: 59px;
         }
         @media ${device.mobileL} {
-            margin: 5px 0 0 5px;
-            padding: 8px;
             font-size: 10px;
             height: 10px;
             width: 91px;
         }
         @media ${device.tablet} {
             margin: 8px 0 0 12px;
-            padding: 8px;
             font-size: 12px;
             height: 14px;
             width: 120px;
@@ -106,11 +98,6 @@ const Form = styled.form`
             font-size: 14px;
             height: 16px;
             width: 150px;
-        }
-        @media ${device.laptopL} {
-            margin: 10px 0 0 15px;
-            padding: 10px;
-            font-size: 14px;
         }
         @media ${device.desktop} {
             margin: 15px 0 0 20px;
@@ -131,9 +118,7 @@ const Form = styled.form`
                 }
             }
             @media ${device.mobileL} {
-                top: 27px;
                 li {
-                    padding: 5px;
                     width: 96px;
                 }
             }
@@ -178,7 +163,6 @@ const Form = styled.form`
         }
         @media ${device.mobileL} {
             font-size: 11px;
-            height: 37px;
             width: 54px;
         }
         @media ${device.tablet} {

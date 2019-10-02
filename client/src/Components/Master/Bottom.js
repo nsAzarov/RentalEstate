@@ -16,12 +16,6 @@ const BottomSection = styled.div`
             display: none;
         }
     }
-    @media ${device.tablet} {
-        display: none;
-        ${FooterWidgetArea} {
-            display: none;
-        }
-    }
     @media ${device.laptop} {
         width: 100%;
         background: #282D33;
@@ -37,14 +31,6 @@ const WidgetHeader = styled.h3`
         font-size: 16px;
         margin-bottom: 8px;
     }
-    @media ${device.mobileL} {
-        font-size: 16px;
-        margin-bottom: 8px;
-    }
-    @media ${device.laptop} {
-        font-size: 16px;
-        margin-bottom: 8px;
-    }
     @media ${device.laptopL} {
         font-size: 18px;
         margin-bottom: 10px;
@@ -54,26 +40,6 @@ const WidgetHeader = styled.h3`
 
 const FirstWidget = styled.div`
     @media ${device.mobileS} {
-        padding: 16px;
-        width: 200px;
-        p {
-            font-size: 12px;
-            line-height: 1.2;
-            text-indent: 8px;
-            color: #72777F;
-        }
-    }
-    @media ${device.mobileL} {
-        padding: 16px;
-        width: 200px;
-        p {
-            font-size: 12px;
-            line-height: 1.2;
-            text-indent: 8px;
-            color: #72777F;
-        }
-    }
-    @media ${device.laptop} {
         padding: 16px;
         width: 200px;
         p {
@@ -99,14 +65,6 @@ const WidgetWithLinks = styled.div`
         padding: 16px;
         width: 200px;
     }
-    @media ${device.mobileL} {
-        padding: 16px;
-        width: 200px;
-    }
-    @media ${device.laptop} {
-        padding: 16px;
-        width: 200px;
-    }
     @media ${device.laptopL} {
         padding: 20px;
         width: 285px;
@@ -114,14 +72,6 @@ const WidgetWithLinks = styled.div`
     ul {
         a {
             @media ${device.mobileS} {
-                line-height: 1.2;
-                font-size: 12px;
-            }
-            @media ${device.mobileL} {
-                line-height: 1.2;
-                font-size: 12px;
-            }
-            @media ${device.laptop} {
                 line-height: 1.2;
                 font-size: 12px;
             }
