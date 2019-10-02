@@ -35,6 +35,9 @@ const ItemBlock = styled(Link)`
         width: 19.2%;
 		margin: 0.4%;
 	}
+	@media ${device.desktopL} {
+		height: 410px;
+	}
 	background: whitesmoke;
 	position: relative;
 `;
@@ -66,6 +69,9 @@ const City = styled.div`
 		padding: 8px 20px 8px 8px;
 		font-size: 16px;
 	}
+	@media ${device.desktopL} {
+		top: 200px;
+	}
 	background: #f0cb86;
 	border-radius: 1px;
 `;
@@ -85,6 +91,9 @@ const ImageSection = styled.div`
 	}
 	@media ${device.laptopL} {
 		height: 250px;
+	}
+	@media ${device.desktopL} {
+		height: 280px;
 	}
 	width: 100%;
 	background: url(${props => props.backgroundImage}) no-repeat;

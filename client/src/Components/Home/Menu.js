@@ -19,6 +19,9 @@ const MenuContent = styled.div`
     @media ${device.desktop} {
         width: 19.2%;
 		margin: 0.4%;
+    }
+    @media ${device.desktopL} {
+        height: 410px;
 	}
     background: wheat;
 `;
