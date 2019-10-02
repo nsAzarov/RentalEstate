@@ -3,6 +3,11 @@ import styled from 'styled-components';
 import {device} from '../../services/device';
 
 const MenuContent = styled.div`
+    @media ${device.mobileL} {
+        width: 98.2%;
+		margin: 0.9% 0.9% 0 0.9%;
+		height: 50px;
+	}
     @media ${device.tablet} {
         width: 98.2%;
 		margin: 0.9% 0.9% 0 0.9%;

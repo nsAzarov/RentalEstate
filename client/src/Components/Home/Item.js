@@ -7,6 +7,11 @@ import group from '../../png/group.png';
 import {device} from '../../services/device';
 
 const ItemBlock = styled(Link)`
+	@media ${device.mobileL} {
+		width: 48%;
+		margin: 1%;
+		height: 235px;
+	}
 	@media ${device.tablet} {
         width: 31.5%;
 		margin: 0.9%;
@@ -37,6 +42,16 @@ const ItemBlock = styled(Link)`
 const City = styled.div`
 	position: absolute;
 	right: 0;
+	@media ${device.mobileL} {
+		top: 110px;
+		padding: 5px 12px 5px 5px;
+		font-size: 12px;
+	}
+	@media ${device.tablet} {
+		top: 135px;
+		padding: 5px 12px 5px 5px;
+		font-size: 14px;
+	}
 	@media ${device.tablet} {
 		top: 135px;
 		padding: 5px 12px 5px 5px;
@@ -57,6 +72,9 @@ const City = styled.div`
 `;
 
 const ImageSection = styled.div`
+	@media ${device.mobileL} {
+		height: 160px;
+	}
 	@media ${device.tablet} {
 		height: 190px;
 	}
@@ -72,9 +90,16 @@ const ImageSection = styled.div`
 `;
 
 const Title = styled.h1`
+	@media ${device.mobileL} {
+		font-size: 16px;
+		margin: 0 0 5px 0;
+		-webkit-line-clamp: 2;
+		text-align: center;
+	}
 	@media ${device.tablet} {
 		font-size: 13px;
 		margin: 5px 0 5px 5px;
+		-webkit-line-clamp: 1;
 	}
 	@media ${device.laptop} {
 		font-size: 16px;
@@ -93,7 +118,11 @@ const Title = styled.h1`
 `;
 
 const Description = styled.h2`
+	@media ${device.mobileL} {
+		display: none;
+	}
 	@media ${device.tablet} {
+		display: -webkit-box;
 		font-size: 9.5px;
 	}
 	@media ${device.laptop} {
@@ -114,6 +143,10 @@ const Description = styled.h2`
 `;
 
 const Info = styled.div`
+	@media ${device.mobileL} {
+		margin-top: 0px;
+		height: 30px;
+	}
 	@media ${device.tablet} {
 		margin-top: 0px;
 		height: 30px;
@@ -136,6 +169,14 @@ const Info = styled.div`
 		display: flex;
 		align-items: center;
 		font-weight: bold;
+		@media ${device.mobileL} {
+			font-size: 12px;
+			margin: 0 5px;
+			img {
+				height: 20px;
+				margin-right: 4px;
+			}
+		}
 		@media ${device.tablet} {
 			font-size: 12px;
 			margin: 0 5px;
@@ -162,8 +203,13 @@ const Info = styled.div`
 		}
 	}
 	#price {
+		@media ${device.mobileL} {
+			font-size: 22px;
+			right: 0;
+		}
 		@media ${device.tablet} {
 			font-size: 20px;
+			right: 10px;
 		}
 		@media ${device.laptop} {
 			font-size: 24px;
@@ -172,8 +218,6 @@ const Info = styled.div`
 			font-size: 28px;
 		}
 		position: absolute;
-		right: 10px;
-		font-size: 28px;
 		font-weight: bold;
 		color: #f0cb86;
 	}

@@ -3,6 +3,13 @@ import styled from 'styled-components';
 import {device} from '../../services/device';
 
 const SignatureSection = styled.div`
+    @media ${device.mobileL} {
+        center {
+            padding: 4px;
+            color: black;
+            font-size: 9px;
+        }
+    }
     @media ${device.tablet} {
         center {
             padding: 8px;

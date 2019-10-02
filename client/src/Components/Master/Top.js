@@ -8,6 +8,17 @@ const Header = styled.div`
     background: white;
     display: flex;
     align-content: center;
+    @media ${device.mobileL} {
+        a {
+            padding: 14px 8px;
+            text-decoration: none;
+            color: #72777F;
+            font-size: 10px;
+        }
+        a:last-child {
+            display: none;
+        }
+    }
     @media ${device.tablet} {
         a {
             padding: 20px 10px;
@@ -43,6 +54,18 @@ const Logo = styled.div`
     display: flex;
     align-items: center;
     cursor: pointer;
+    @media ${device.mobileL} {
+        margin-right: 4px;
+        width: 85px;
+        img {
+            height: 26px;
+        }
+        h1 {
+            font-size: 20px;
+            color: #323840;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+    }
     @media ${device.tablet} {
         margin-right: 50px;
         width: 125px;

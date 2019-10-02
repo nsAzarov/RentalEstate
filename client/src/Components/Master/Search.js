@@ -4,6 +4,9 @@ import landscape from '../../png/landscape.jpg'
 import {device} from '../../services/device'
 
 const SearchSection = styled.div`
+    @media ${device.mobileL} {
+        height: 150px;
+    }
     @media ${device.tablet} {
         height: 220px;
     }
@@ -27,8 +30,13 @@ const SearchSection = styled.div`
 `;
 
 const Form = styled.form`
-    height: 80px;
-    width: 1000px;
+    @media ${device.mobileL} {
+        width: 400px;
+        left: 50%;
+        margin-left: -200px;
+        height: 37px;
+        top: 100px;
+    }
     @media ${device.tablet} {
         width: 700px;
         left: 50%;
@@ -61,6 +69,13 @@ const Form = styled.form`
     display: flex;
     position: absolute;
     .dropdown {
+        @media ${device.mobileL} {
+            margin: 5px 0 0 5px;
+            padding: 8px;
+            font-size: 10px;
+            height: 10px;
+            width: 91px;
+        }
         @media ${device.tablet} {
             margin: 8px 0 0 12px;
             padding: 8px;
@@ -91,6 +106,13 @@ const Form = styled.form`
         position: relative;
         cursor: pointer;
         ul {
+            @media ${device.mobileL} {
+                top: 27px;
+                li {
+                    padding: 5px;
+                    width: 96px;
+                }
+            }
             @media ${device.tablet} {
                 top: 32px;
                 li {
@@ -125,6 +147,11 @@ const Form = styled.form`
         }
     }
     button {
+        @media ${device.mobileL} {
+            font-size: 11px;
+            height: 37px;
+            width: 54px;
+        }
         @media ${device.tablet} {
             font-size: 12px;
             height: 48px;
@@ -148,6 +175,7 @@ const Form = styled.form`
         transition: .2s;
         &:hover {
             background: #3C90BE;
+            color: white;
         }
     }
 `;
