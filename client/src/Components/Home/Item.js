@@ -7,6 +7,11 @@ import group from '../../png/group.png';
 import {device} from '../../services/device';
 
 const ItemBlock = styled(Link)`
+	@media ${device.mobileS} {
+		width: 49%;
+		margin: 0.5%;
+		height: 170px;
+	}
 	@media ${device.mobileL} {
 		width: 48%;
 		margin: 1%;
@@ -42,6 +47,11 @@ const ItemBlock = styled(Link)`
 const City = styled.div`
 	position: absolute;
 	right: 0;
+	@media ${device.mobileS} {
+		top: 80px;
+		padding: 4px 12px 4px 4px;
+		font-size: 10px;
+	}
 	@media ${device.mobileL} {
 		top: 110px;
 		padding: 5px 12px 5px 5px;
@@ -72,6 +82,9 @@ const City = styled.div`
 `;
 
 const ImageSection = styled.div`
+	@media ${device.mobileS} {
+		height: 110px;
+	}
 	@media ${device.mobileL} {
 		height: 160px;
 	}
@@ -90,6 +103,12 @@ const ImageSection = styled.div`
 `;
 
 const Title = styled.h1`
+	@media ${device.mobileS} {
+		font-size: 14px;
+		margin: 0 0 3px 0;
+		-webkit-line-clamp: 2;
+		text-align: center;
+	}
 	@media ${device.mobileL} {
 		font-size: 16px;
 		margin: 0 0 5px 0;
@@ -118,7 +137,7 @@ const Title = styled.h1`
 `;
 
 const Description = styled.h2`
-	@media ${device.mobileL} {
+	@media ${device.mobileS} {
 		display: none;
 	}
 	@media ${device.tablet} {
@@ -143,6 +162,10 @@ const Description = styled.h2`
 `;
 
 const Info = styled.div`
+	@media ${device.mobileS} {
+		margin-top: 0px;
+		height: 20px;
+	}
 	@media ${device.mobileL} {
 		margin-top: 0px;
 		height: 30px;
@@ -169,6 +192,14 @@ const Info = styled.div`
 		display: flex;
 		align-items: center;
 		font-weight: bold;
+		@media ${device.mobileS} {
+			font-size: 12px;
+			margin: 0 3px;
+			img {
+				height: 16px;
+				margin-right: 1px;
+			}
+		}
 		@media ${device.mobileL} {
 			font-size: 12px;
 			margin: 0 5px;
@@ -203,6 +234,10 @@ const Info = styled.div`
 		}
 	}
 	#price {
+		@media ${device.mobileS} {
+			font-size: 16px;
+			right: 0;
+		}
 		@media ${device.mobileL} {
 			font-size: 22px;
 			right: 0;

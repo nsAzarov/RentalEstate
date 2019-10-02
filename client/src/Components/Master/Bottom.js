@@ -10,7 +10,7 @@ const FooterWidgetArea = styled.div`
 `;
 
 const BottomSection = styled.div`
-    @media ${device.mobileL} {
+    @media ${device.mobileS} {
         display: none;
         ${FooterWidgetArea} {
             display: none;
@@ -33,6 +33,10 @@ const BottomSection = styled.div`
 `;
 
 const WidgetHeader = styled.h3`
+    @media ${device.mobileS} {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
     @media ${device.mobileL} {
         font-size: 16px;
         margin-bottom: 8px;
@@ -49,6 +53,16 @@ const WidgetHeader = styled.h3`
 `;
 
 const FirstWidget = styled.div`
+    @media ${device.mobileS} {
+        padding: 16px;
+        width: 200px;
+        p {
+            font-size: 12px;
+            line-height: 1.2;
+            text-indent: 8px;
+            color: #72777F;
+        }
+    }
     @media ${device.mobileL} {
         padding: 16px;
         width: 200px;
@@ -81,6 +95,10 @@ const FirstWidget = styled.div`
 `;
 
 const WidgetWithLinks = styled.div`
+    @media ${device.mobileS} {
+        padding: 16px;
+        width: 200px;
+    }
     @media ${device.mobileL} {
         padding: 16px;
         width: 200px;
@@ -95,6 +113,10 @@ const WidgetWithLinks = styled.div`
     }
     ul {
         a {
+            @media ${device.mobileS} {
+                line-height: 1.2;
+                font-size: 12px;
+            }
             @media ${device.mobileL} {
                 line-height: 1.2;
                 font-size: 12px;

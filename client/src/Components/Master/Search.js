@@ -4,6 +4,9 @@ import landscape from '../../png/landscape.jpg'
 import {device} from '../../services/device'
 
 const SearchSection = styled.div`
+    @media ${device.mobileS} {
+        height: 135px;
+    }
     @media ${device.mobileL} {
         height: 150px;
     }
@@ -30,6 +33,13 @@ const SearchSection = styled.div`
 `;
 
 const Form = styled.form`
+    @media ${device.mobileS} {
+        width: 300px;
+        left: 50%;
+        margin-left: -150px;
+        height: 37px;
+        top: 85px;
+    }
     @media ${device.mobileL} {
         width: 400px;
         left: 50%;
@@ -69,6 +79,13 @@ const Form = styled.form`
     display: flex;
     position: absolute;
     .dropdown {
+        @media ${device.mobileS} {
+            margin: 5px 0 0 5px;
+            padding: 8px;
+            font-size: 8px;
+            height: 9px;
+            width: 59px;
+        }
         @media ${device.mobileL} {
             margin: 5px 0 0 5px;
             padding: 8px;
@@ -106,6 +123,13 @@ const Form = styled.form`
         position: relative;
         cursor: pointer;
         ul {
+            @media ${device.mobileS} {
+                top: 27px;
+                li {
+                    padding: 5px;
+                    width: 64px;
+                }
+            }
             @media ${device.mobileL} {
                 top: 27px;
                 li {
@@ -147,6 +171,11 @@ const Form = styled.form`
         }
     }
     button {
+        @media ${device.mobileS} {
+            font-size: 10px;
+            height: 37px;
+            width: 50px;
+        }
         @media ${device.mobileL} {
             font-size: 11px;
             height: 37px;
