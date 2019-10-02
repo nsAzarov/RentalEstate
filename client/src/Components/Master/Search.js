@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import landscape from '../../png/landscape.jpg'
 import {device} from '../../services/device'
@@ -88,17 +88,39 @@ const Form = styled.form`
         width: 150px;
         border: 1px solid black;
         border-radius: 3px;
+        position: relative;
         cursor: pointer;
-        .dropdown-menu {
-            margin: 30px;
-            margin-left: 0;
-            padding-left: 0;
-            display: none;
+        ul {
+            @media ${device.tablet} {
+                top: 32px;
+                li {
+                    padding: 8px;
+                    width: 120px;
+                }
+            }
+            @media ${device.laptop} {
+                top: 37px;
+                li {
+                    padding: 10px;
+                    width: 150px;
+                }
+            }
+            @media ${device.desktop} {
+                top: 50px;
+                li {
+                    padding: 16px;
+                }
+            }
+            position: absolute;
+            left: 0px;
+            z-index: 10;
             li {
-                height: 16px;
-                width: 150px;
                 background: whitesmoke;
                 list-style-type: none;
+                transition: 0.3s;
+                &:hover {
+                    background: #3C90BE;
+                }
             }
         }
     }
@@ -109,11 +131,6 @@ const Form = styled.form`
             width: 60px;
         }
         @media ${device.laptop} {
-            font-size: 14px;
-            height: 58px;
-            width: 80px;
-        }
-        @media ${device.laptopL} {
             font-size: 14px;
             height: 58px;
             width: 80px;
@@ -136,38 +153,71 @@ const Form = styled.form`
 `;
 
 const Search = () => {
+    const [actionsOpen, setActionsOpen] = useState(false);
+    const [typesOpen, setTypesOpen] = useState(false);
+    const [citiesOpen, setCitiesOpen] = useState(false);
+
+    const [action, setAction] = useState("All Actions");
+    const [type, setType] = useState("All Types");
+    const [city, setCity] = useState("All Cities");
     return(
         <SearchSection>
             <Form>
-                <div className="dropdown form-control">
-                    <div data-toggle="dropdown" className="filter-menu-item" id="actions" value="all-actions">All Actions</div>
-                    <ul className="dropdown-menu" id="dropdown-actions">
-                        <li>All Actions</li>
-                        <li>Properties Sale</li>
-                        <li>Israel Rentals</li>
-                        <li>Luxary Apartments</li>
-                        <li>New Projects</li>
-                    </ul>
+                <div className="dropdown form-control" onClick={() => {setTypesOpen(false);setCitiesOpen(false);setActionsOpen(!actionsOpen)}}>
+                    <div className="filter-menu-item">{action}</div>
+                    {actionsOpen ?
+                        <ul>
+                            <li onClick={() => {setAction("All Actions")}}>All Actions</li>
+                            <li onClick={() => {setAction("Rent Apartment")}}>Rent Apartment</li>
+                            <li onClick={() => {setAction("Book Hotel")}}>Book Hotel</li>
+                            <li onClick={() => {setAction("Buy Property")}}>Buy Property</li>
+                        </ul>
+                        :
+                        null
+                    }
                 </div>
-                <div className="dropdown form-control">
-                    <div data-toggle="dropdown" className="filter-menu-item" id="types" value="all-types">All Types</div>
-                    <ul className="dropdown-menu" id="dropdown-types">
-                        <li>All Actions</li>
-                        <li>Properties Sale</li>
-                        <li>Israel Rentals</li>
-                        <li>Luxary Apartments</li>
-                        <li>New Projects</li>
-                    </ul>
+                <div className="dropdown form-control" onClick={() => {setActionsOpen(false);setCitiesOpen(false);setTypesOpen(!typesOpen)}}>
+                    <div className="filter-menu-item">{type}</div>
+                    {typesOpen ?
+                        <ul>
+                            <li onClick={() => {setType("All Types")}}>All Types</li>
+                            {action=="Rent Apartment" ?
+                            <>
+                            <li onClick={() => {setType("Luxary Apartments")}}>Luxary Apartments</li>
+                            <li onClick={() => {setType("Villa")}}>Villa</li>
+                            </>
+                            :
+                            null
+                            }
+                            {action=="Book Hotel" ?
+                            <li onClick={() => {setType("Luxary Hotels")}}>Luxary Hotels</li>
+                            :
+                            null
+                            }
+                            {action=="Buy Property" ?
+                            <li onClick={() => {setType("New Projects")}}>New Projects</li>
+                            :
+                            null
+                            }
+                        </ul>
+                        :
+                        null
+                    }
                 </div>
-                <div className="dropdown form-control">
-                    <div data-toggle="dropdown" className="filter-menu-item" id="cities" value="all-cities">Select City</div>
-                    <ul className="dropdown-menu" id="dropdown-cites">
-                        <li>All Actions</li>
-                        <li>Properties Sale</li>
-                        <li>Israel Rentals</li>
-                        <li>Luxary Apartments</li>
-                        <li>New Projects</li>
-                    </ul>
+                <div className="dropdown form-control" onClick={() => {setActionsOpen(false);setTypesOpen(false);setCitiesOpen(!citiesOpen)}}>
+                    <div className="filter-menu-item">{city}</div>
+                    {citiesOpen ?
+                        <ul>
+                            <li onClick={() => {setCity("All Cities")}}>All Cities</li>
+                            <li onClick={() => {setCity("Tel Aviv")}}>Tel Aviv</li>
+                            <li onClick={() => {setCity("Jerusalem")}}>Jerusalem</li>
+                            <li onClick={() => {setCity("Herzliya")}}>Herzliya</li>
+                            <li onClick={() => {setCity("Safed")}}>Safed</li>
+                            <li onClick={() => {setCity("Tiberias")}}>Tiberias</li>
+                        </ul>
+                        :
+                        null
+                    }
                 </div>
                 <button type="submit">Search</button>
             </Form>
