@@ -14,6 +14,10 @@ const Header = styled.div`
             text-decoration: none;
             color: #72777F;
             font-size: 9px;
+            transition: .3s;
+            &:hover {
+                background: whitesmoke;
+            }
         }
         a:last-child {
             display: none;
@@ -53,11 +57,12 @@ const Header = styled.div`
     }
 `;
 
-const Logo = styled.div`
+const Logo = styled(Link)`
     display: flex;
     align-items: center;
     cursor: pointer;
     @media ${device.mobileS} {
+        padding: 0 !important;
         margin-right: 4px;
         width: 85px;
         img {
@@ -67,6 +72,9 @@ const Logo = styled.div`
             font-size: 18px;
             color: #323840;
             font-family: 'Josefin Sans', sans-serif;
+        }
+        &:hover {
+            background: none !important;
         }
     }
     @media ${device.mobileL} {
@@ -109,7 +117,7 @@ const Logo = styled.div`
 const Top = () => {
     return(
         <Header>
-            <Logo>
+            <Logo to='/'>
                 <img src={require('../../png/key.png')} alt=""/>
                 <h1>Rental Estate</h1>
             </Logo>

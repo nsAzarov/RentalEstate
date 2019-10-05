@@ -11,6 +11,12 @@ const ItemBlock = styled(Link)`
 		width: 49%;
 		margin: 0.5%;
 		height: 170px;
+		transition: .3s;
+		&:hover {
+			-webkit-box-shadow: 0px 0px 10px 0px rgba(240,203,134,1);
+			-moz-box-shadow: 	0px 0px 10px 0px rgba(240,203,134,1);
+			box-shadow: 		0px 0px 10px 0px rgba(240,203,134,1);
+		}
 	}
 	@media ${device.mobileL} {
 		width: 48%;
