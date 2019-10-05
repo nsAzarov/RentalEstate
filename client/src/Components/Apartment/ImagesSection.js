@@ -4,8 +4,7 @@ import {device} from '../../services/device';
 
 const ImagesBlock = styled.div`
     height: 550px;
-    width: 98%;
-    margin: 1%;
+    width: 100%;
     position: relative;
     .arrowBtn {
         position: absolute;
