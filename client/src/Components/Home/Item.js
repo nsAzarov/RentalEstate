@@ -249,7 +249,7 @@ const Info = styled.div`
 const Item = (props) => {
 	let img = require(`../../png/${props.item.images[0]}`);
 	return (
-		<ItemBlock to="/Apartment">
+		<ItemBlock to={`/Apartment/${props.item._id}`}>
 			<ImageSection backgroundImage={img} alt=""/>
 			<City>{props.item.city}</City>
 			<Title>{props.item.heading}</Title>

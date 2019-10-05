@@ -12,13 +12,13 @@ const Container = styled.div`
     justify-content: center;
 `;
 
-const Apartment = () => {
+const Apartment = (props) => {
     return (
         <Fragment>
             <Top />
-
+            
             <Container>
-                <Content />
+                <Content ID={props.match.params.id}/>
                 <Booking />
             </Container>
 

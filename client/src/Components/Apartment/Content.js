@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import {device} from '../../services/device';
 import ImagesSection from './ImagesSection';
 import OverviewSection from './OverviewSection';
+import APIservice from '../../services/APIservice';
 
 const ContentBlock = styled.div`
     width: 60%;
@@ -10,9 +11,17 @@ const ContentBlock = styled.div`
     margin: 1%;
 `;
 
-function Content() {
+function Content(props) {
+    const [apartment, setApartment] = useState({})
+    useEffect(() => {
+        const ApartmentsAPIservice = new APIservice();
+        ApartmentsAPIservice
+            .getApartment(props.ID)
+            .then(data => setApartment(data));
+    }, [])
     return (
         <ContentBlock>
+            {console.log(apartment)}
             <ImagesSection />
             <OverviewSection />
         </ContentBlock>

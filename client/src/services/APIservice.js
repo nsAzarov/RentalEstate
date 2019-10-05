@@ -11,4 +11,8 @@ export default class BookAPIService {
         const Apartments = await this.getResource(`/Home`);
         return Apartments;
     }
+    async getApartment(id) {
+        const Apartment = await this.getResource(`/Apartment/${id}`);
+        return Apartment;
+    }
 }
