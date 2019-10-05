@@ -13,16 +13,17 @@ const ContentBlock = styled.div`
 
 function Content(props) {
     const [apartment, setApartment] = useState({})
+    const [images, setImages] = useState(['14/i1.jpg', '14/i2.jpg', '14/i3.jpg'])
     useEffect(() => {
         const ApartmentsAPIservice = new APIservice();
         ApartmentsAPIservice
             .getApartment(props.ID)
-            .then(data => setApartment(data));
+            .then(data => {setApartment(data); setImages(data.images); console.log("AAAAAAAAAAAA")});
     }, [])
     return (
         <ContentBlock>
-            {console.log(apartment)}
-            <ImagesSection />
+            {console.log(apartment.images)}
+            <ImagesSection Images={images}/>
             <OverviewSection />
         </ContentBlock>
     )

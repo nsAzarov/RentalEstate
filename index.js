@@ -22,7 +22,6 @@ app.get('/Home', (req, res) => {
 });
 
 app.get('/Apartment/:id', (req, res) => {
-    console.log(req.params.id);
     let ObjID = new mongoose.Types.ObjectId(req.params.id);
     Apartment.findOne({ _id: ObjID})
         .then(apartment => res.json(apartment));
