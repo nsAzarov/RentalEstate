@@ -55,14 +55,34 @@ const ImagesBlock = styled.div`
 
 function ImagesSection(props) {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [images, setImages] = useState([{}, {}, {}, {}, {}])
-    console.log(props);
+    const [maxIndex, setMaxIndex] = useState(props.Images.length - 1);
+    useEffect(() => {
+        setMaxIndex(props.Images.length - 1);
+    }, [props.Images])
+    const prev = () => {
+        currentIndex === 0 ? 
+            setCurrentIndex(maxIndex)
+            :
+            setCurrentIndex(currentIndex - 1);
+    }
+    const next = () => {
+        currentIndex === maxIndex ? 
+            setCurrentIndex(0)
+            :
+            setCurrentIndex(currentIndex + 1);
+    }
+    useEffect(() => {
+        const interval = setInterval(() => {
+            next();
+        }, 10000);
+        return () => clearInterval(interval);
+    }, [currentIndex])
     return (
         <ImagesBlock>
-            <button id="prev" className="arrowBtn" onClick={() => {setCurrentIndex(currentIndex - 1)}}>
+            <button id="prev" className="arrowBtn" onClick={() => {prev()}}>
                 <img src={require("../../png/prev.png")} alt=""/>
             </button>
-            <button id="next" className="arrowBtn" onClick={() => {setCurrentIndex(currentIndex + 1)}}>
+            <button id="next" className="arrowBtn" onClick={() => {next()}}>
                 <img src={require("../../png/next.png")} alt=""/>
             </button>
             <div id="blocks-slider">

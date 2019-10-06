@@ -11,8 +11,8 @@ const ContentBlock = styled.div`
 `;
 
 function Content(props) {
-    const [apartment, setApartment] = useState({heading: "", description: ""})
-    const [images, setImages] = useState(['14/i1.jpg', '14/i2.jpg', '14/i3.jpg'])
+    const [apartment, setApartment] = useState({})
+    const [images, setImages] = useState(['0/i1.jpg', '0/i2.jpg', '0/i3.jpg'])
     useEffect(() => {
         const ApartmentsAPIservice = new APIservice();
         ApartmentsAPIservice
