@@ -5,6 +5,7 @@ import Bottom from '../Master/Bottom';
 import Signature from '../Master/Signature';
 import Content from './Content';
 import Booking from './Booking';
+import APIservice from '../../services/APIservice';
 
 const Container = styled.div`
     width: 100%;
@@ -14,13 +15,21 @@ const Container = styled.div`
 `;
 
 const Apartment = (props) => {
+    const [apartment, setApartment] = useState({})
+    const [images, setImages] = useState(['0/i1.jpg', '0/i2.jpg', '0/i3.jpg'])
+    useEffect(() => {
+        const ApartmentsAPIservice = new APIservice();
+        ApartmentsAPIservice
+            .getApartment(props.match.params.id)
+            .then(data => {setApartment(data); setImages(data.images)});
+    }, [])
     return (
         <Fragment>
             <Top />
             
             <Container>
-                <Content ID={props.match.params.id}/>
-                <Booking />
+                <Content images={images} apartment={apartment}/>
+                <Booking pricePerNight={apartment.price}/>
             </Container>
 
             <Bottom />

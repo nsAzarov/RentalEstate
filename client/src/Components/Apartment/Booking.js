@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import DatePicker, { registerLocale, setDefaultLocale } from "react-datepicker";
 import { addDays } from 'date-fns';
@@ -6,7 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import {device} from '../../services/device';
 
 const BookingBlock = styled.div`
-    height: 380px;
+    height: 295px;
     width: 25%;
     margin: 1%;
     position: sticky;
@@ -58,14 +58,35 @@ const Inputs = styled.div`
 `;
 
 const Prices = styled.div`
-    height: 250px;
+    height: 165px;
     width: 100%;
     background: white;
+    .prices {
+        width: 80%;
+        padding: 3% 5%;
+        margin: 0 5%;
+        border-bottom: 1px solid #d9d9d9;
+    }
 `;
 
-function Booking() {
+const BookingButton = styled.button`
+    width: 90%;
+    margin: 5%;
+    padding: 3% 5%;
+    background: wheat;
+    transition: .3s;
+    &:hover {
+        background: #f0cb86;
+    }
+`;
+
+function Booking(props) {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
+    const [total, setTotal] = useState( (endDate.getDay() - startDate.getDay()) * props.pricePerNight );
+    useEffect(() => {
+        setTotal( (endDate.getDay() - startDate.getDay()) * props.pricePerNight );
+    }, [startDate, endDate])
     return (
         <BookingBlock>
             <Inputs>
@@ -96,7 +117,9 @@ function Booking() {
                 </div>
             </Inputs>
             <Prices>
-
+                <div className="prices">Price per night: {props.pricePerNight}</div>
+                <div className="prices"><b>Total</b>: {total ? total : props.pricePerNight}</div>
+                <BookingButton>Book Now</BookingButton>
             </Prices>
         </BookingBlock>
     )
