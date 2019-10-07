@@ -22,8 +22,8 @@ const BookingBlock = styled.div`
         top: 0;
     }
     @media ${device.desktop} {
-        width: 15%;
-        margin: 1% 15% 1% 1%;
+        width: 20%;
+        margin: 1% 10% 1% 1%;
     }
 `;
 
@@ -61,6 +61,9 @@ const Inputs = styled.div`
                 @media ${device.tablet} {
                     width: 120px;
                 }
+                @media ${device.desktop} {
+                    width: 110px;
+                }
                 border: none;
                 background: none;
                 font-size: 16px;
@@ -76,13 +79,52 @@ const Inputs = styled.div`
         background: white;
         display: flex;
         justify-content: space-between;
-        img {
+        align-content: center;
+        align-items: center;
+        #guestsLogo {
             height: 30px;
             margin: 10px;
         }
-        img:last-child {
+        .arrowImg {
             height: 20px;
             margin: 15px;
+        }
+        position: relative;
+        #overGuestsBlock {
+            position: absolute;
+            top: 0;
+            height: 50px;
+            width: 100%;
+        }
+        #guestsForm {
+            position: absolute;
+            top: 50px;
+            height: 100px;
+            width: 100%;
+            background: rgb(255,255,255);
+            background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(217,217,217,1) 100%);
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            .guestsInput {
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .guestsInputForm {
+                    height: 40px;
+                    button {
+                        height: 40px;
+                        width: 40px;
+                        border: 1px solid grey;
+                        border-radius: 2px;
+                    }
+                    .guestsType {
+                        display: inline-block;
+                        padding: 0 10px;
+                        cursor: default;
+                    }
+                }
+            }
         }
     }
 `;
@@ -126,10 +168,36 @@ function Booking(props) {
     const [endDate, setEndDate] = useState(addDays(new Date(), 1));
     const [total, setTotal] = useState(props.pricePerNight);
     const [nights, setNights] = useState(1);
+    const [guestsAdult, setGuestsAdult] = useState(1);
+    const [guestsChildren, setGuestsChildren] = useState(0);
+    const [guestsFormOpened, setGuestsFormOpened] = useState(false);
+
     useEffect(() => {
         setNights(endDate.getDay() - startDate.getDay())
         setTotal(nights * props.pricePerNight);
     }, [startDate, endDate, nights, props.pricePerNight])
+
+    const increaseAdultGuests = () => {
+        if(guestsAdult + guestsChildren < props.maxGuests) {
+            setGuestsAdult(guestsAdult + 1);
+        }
+    }
+    const decreaseAdultGuests = () => {
+        if(guestsAdult > 0) {
+            setGuestsAdult(guestsAdult - 1);
+        }
+    }
+    const increaseChildrenGuests = () => {
+        if(guestsAdult + guestsChildren < props.maxGuests) {
+            setGuestsChildren(guestsChildren + 1);
+        }
+    }
+    const decreaseChildrenGuests = () => {
+        if(guestsChildren > 0) {
+            setGuestsChildren(guestsChildren - 1);
+        }
+    }
+
     return (
         <BookingBlock>
             <Inputs>
@@ -155,8 +223,33 @@ function Booking(props) {
                     />
                 </div>
                 <div id="guests">
-                    <img src={require('../../png/group.png')} alt="guests"/>
-                    <img src={require('../../png/arrow-bottom.png')} alt="open"/>
+                    <div id="overGuestsBlock" onClick={() => {setGuestsFormOpened(!guestsFormOpened)}}></div>
+                    <img id="guestsLogo" src={require('../../png/group.png')} alt="guests"/>
+                    <div className="guestsNumber">Adult: {guestsAdult}</div>
+                    {guestsChildren ? <div className="guestsNumber">Children: {guestsChildren}</div> : null}
+                    {guestsFormOpened ?
+                        <>
+                        <img className="arrowImg" src={require('../../png/arrow-up.png')} alt="close"/>
+                        <div id="guestsForm">
+                            <div className="guestsInput">
+                                <div className="guestsInputForm">
+                                    <button onClick={() => {decreaseAdultGuests()}}>-</button>
+                                    <div className="guestsType">Adult</div>
+                                    <button onClick={() => {increaseAdultGuests()}}>+</button>
+                                </div>
+                            </div>
+                            <div className="guestsInput">
+                                <div className="guestsInputForm">
+                                    <button onClick={() => {decreaseChildrenGuests()}}>-</button>
+                                    <div className="guestsType">Child</div>
+                                    <button onClick={() => {increaseChildrenGuests()}}>+</button>
+                                </div>
+                            </div>
+                        </div>
+                        </>
+                        :
+                        <img className="arrowImg" src={require('../../png/arrow-bottom.png')} alt="open"/>
+                    }
                 </div>
             </Inputs>
             <Prices>

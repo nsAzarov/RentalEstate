@@ -40,6 +40,7 @@ const AdContent = styled.div`
         font-weight: bold;
         text-align: right;
         position: absolute;
+        user-select: none;
         top: 10px;
         right: 10px;
     }

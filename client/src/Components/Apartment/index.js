@@ -39,7 +39,7 @@ const Apartment = (props) => {
             
             <Container>
                 <Content images={images} apartment={apartment}/>
-                <Booking pricePerNight={apartment.price}/>
+                <Booking pricePerNight={apartment.price} maxGuests={apartment.guests}/>
             </Container>
 
             <Bottom />
