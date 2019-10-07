@@ -13,10 +13,8 @@ const BookingBlock = styled.div`
     @media ${device.tablet} {
         width: 60%;
         margin: 0 20%;
-        display: inline-block;
     }
     @media ${device.laptopL} {
-        display: inline-block;
         height: 295px;
         width: 23%;
         margin: 1% 5% 1% 1%;
@@ -24,12 +22,8 @@ const BookingBlock = styled.div`
         top: 0;
     }
     @media ${device.desktop} {
-        display: inline-block;
-        height: 295px;
         width: 15%;
         margin: 1% 15% 1% 1%;
-        position: sticky;
-        top: 0;
     }
 `;
 

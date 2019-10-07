@@ -4,7 +4,7 @@ import Top from '../Master/Top';
 import Search from '../Master/Search';
 import Bottom from '../Master/Bottom';
 import Signature from '../Master/Signature';
-import Menu from './Menu';
+import Ad from './Ad';
 import Item from './Item';
 import APIservice from '../../services/APIservice';
 
@@ -26,7 +26,7 @@ const Home = () => {
             <Top />
             <Search />
             <HomeContent>
-                <Menu />
+                <Ad />
                 {apartments.map((element, i) => {
                     return <Item item={element} key={i}/>
                 })}
