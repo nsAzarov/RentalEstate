@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
-import {device} from '../../services/device';
 
 const ImagesBlock = styled.div`
     height: 550px;
@@ -88,7 +87,7 @@ function ImagesSection(props) {
             <div id="blocks-slider">
                 <div id="blocks-slider-wrapper" style={{'transform': `translateX(-${currentIndex*100}%)`}}>
                     {props.Images.map((elem, i) => {
-                        return <div className="carousel-item" id={i}>
+                        return <div className="carousel-item" key={i}>
                             <img src={require(`../../png/${props.Images[i]}`)} alt=""/>
                         </div>
                     })}

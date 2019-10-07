@@ -22,7 +22,7 @@ const Apartment = (props) => {
         ApartmentsAPIservice
             .getApartment(props.match.params.id)
             .then(data => {setApartment(data); setImages(data.images)});
-    }, [])
+    }, [props.match.params.id])
     return (
         <Fragment>
             <Top />

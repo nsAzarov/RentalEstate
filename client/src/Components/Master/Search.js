@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import landscape from '../../png/landscape.jpg'
 import {device} from '../../services/device'
@@ -222,7 +222,7 @@ const Search = () => {
                     {typesOpen ?
                         <ul>
                             <li onClick={() => {setType("All Types")}}>All Types</li>
-                            {action=="Rent Apartment" ?
+                            {action==="Rent Apartment" ?
                             <>
                             <li onClick={() => {setType("Luxary Apartments")}}>Luxary Apartments</li>
                             <li onClick={() => {setType("Villa")}}>Villa</li>
@@ -230,12 +230,12 @@ const Search = () => {
                             :
                             null
                             }
-                            {action=="Book Hotel" ?
+                            {action==="Book Hotel" ?
                             <li onClick={() => {setType("Luxary Hotels")}}>Luxary Hotels</li>
                             :
                             null
                             }
-                            {action=="Buy Property" ?
+                            {action==="Buy Property" ?
                             <li onClick={() => {setType("New Projects")}}>New Projects</li>
                             :
                             null

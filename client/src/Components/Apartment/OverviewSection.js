@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import {device} from '../../services/device';
 
 import bathtub from '../../png/bathtub.png';
 import bed from '../../png/bed.png';

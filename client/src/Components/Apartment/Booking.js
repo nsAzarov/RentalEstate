@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
-import DatePicker, { registerLocale, setDefaultLocale } from "react-datepicker";
+import DatePicker from "react-datepicker";
 import { addDays } from 'date-fns';
 import "react-datepicker/dist/react-datepicker.css";
-import {device} from '../../services/device';
 
 const BookingBlock = styled.div`
     height: 295px;
@@ -66,6 +65,7 @@ const Prices = styled.div`
         padding: 3% 5%;
         margin: 0 5%;
         border-bottom: 1px solid #d9d9d9;
+        white-space: pre-wrap;
     }
 `;
 
@@ -82,11 +82,13 @@ const BookingButton = styled.button`
 
 function Booking(props) {
     const [startDate, setStartDate] = useState(new Date());
-    const [endDate, setEndDate] = useState(new Date());
-    const [total, setTotal] = useState( (endDate.getDay() - startDate.getDay()) * props.pricePerNight );
+    const [endDate, setEndDate] = useState(addDays(new Date(), 1));
+    const [total, setTotal] = useState(props.pricePerNight);
+    const [nights, setNights] = useState(1);
     useEffect(() => {
-        setTotal( (endDate.getDay() - startDate.getDay()) * props.pricePerNight );
-    }, [startDate, endDate])
+        setNights(endDate.getDay() - startDate.getDay())
+        setTotal(nights * props.pricePerNight);
+    }, [startDate, endDate, nights, props.pricePerNight])
     return (
         <BookingBlock>
             <Inputs>
@@ -117,8 +119,8 @@ function Booking(props) {
                 </div>
             </Inputs>
             <Prices>
-                <div className="prices">Price per night: {props.pricePerNight}</div>
-                <div className="prices"><b>Total</b>: {total ? total : props.pricePerNight}</div>
+                <div className="prices">Price per night: {props.pricePerNight} &#8362;      Nights: {nights}</div>
+                <div className="prices"><b>Total</b>: {total ? total : props.pricePerNight} &#8362;</div>
                 <BookingButton>Book Now</BookingButton>
             </Prices>
         </BookingBlock>
