@@ -8,7 +8,12 @@ import "react-datepicker/dist/react-datepicker.css";
 const BookingBlock = styled.div`
     @media ${device.mobileS} {
         width: 100%;
-        display: none;
+        display: inline-block;
+    }
+    @media ${device.tablet} {
+        width: 60%;
+        margin: 0 20%;
+        display: inline-block;
     }
     @media ${device.laptopL} {
         display: inline-block;
@@ -29,7 +34,18 @@ const BookingBlock = styled.div`
 `;
 
 const Inputs = styled.div`
-    height: 130px;
+    @media ${device.mobileS} {
+        height: 130px;
+    }
+    @media ${device.tablet} {
+        height: 140px;
+    }
+    @media ${device.laptop} {
+        height: 150px;
+    }
+    @media ${device.laptopL} {
+        height: 130px;
+    }
     width: 100%;
     .date {
         display: inline-block;
@@ -45,7 +61,12 @@ const Inputs = styled.div`
             input {
                 position: absolute;
                 top: -50px;
-                width: 120px;
+                @media ${device.mobileS} {
+                    width: 90px;
+                }
+                @media ${device.tablet} {
+                    width: 120px;
+                }
                 border: none;
                 background: none;
                 font-size: 16px;
@@ -73,12 +94,22 @@ const Inputs = styled.div`
 `;
 
 const Prices = styled.div`
-    height: 165px;
+    @media ${device.laptopL} {
+        height: 160px;
+    }
     width: 100%;
     background: white;
     .prices {
         width: 80%;
-        padding: 3% 5%;
+        @media ${device.mobileS} {
+            padding: 3% 5%;
+        }
+        @media ${device.tablet} {
+            padding: 2.5% 5%;
+        }
+        @media ${device.laptopL} {
+            padding: 3% 5%;
+        }
         margin: 0 5%;
         border-bottom: 1px solid #d9d9d9;
         white-space: pre-wrap;
