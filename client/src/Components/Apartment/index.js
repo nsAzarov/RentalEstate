@@ -6,11 +6,21 @@ import Signature from '../Master/Signature';
 import Content from './Content';
 import Booking from './Booking';
 import APIservice from '../../services/APIservice';
+import {device} from '../../services/device';
 
 const Container = styled.div`
+    @media ${device.mobileS} {
+        display: inline-block;
+    }
+    @media ${device.laptopL} {
+        display: flex;
+        justify-content: center;
+    }
+    @media ${device.desktop} {
+        display: flex;
+        justify-content: center;
+    }
     width: 100%;
-    display: flex;
-    justify-content: center;
     background: whitesmoke;
 `;
 

@@ -1,15 +1,31 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
+import {device} from '../../services/device';
 import DatePicker from "react-datepicker";
 import { addDays } from 'date-fns';
 import "react-datepicker/dist/react-datepicker.css";
 
 const BookingBlock = styled.div`
-    height: 295px;
-    width: 25%;
-    margin: 1%;
-    position: sticky;
-    top: 0;
+    @media ${device.mobileS} {
+        width: 100%;
+        display: none;
+    }
+    @media ${device.laptopL} {
+        display: inline-block;
+        height: 295px;
+        width: 23%;
+        margin: 1% 5% 1% 1%;
+        position: sticky;
+        top: 0;
+    }
+    @media ${device.desktop} {
+        display: inline-block;
+        height: 295px;
+        width: 15%;
+        margin: 1% 15% 1% 1%;
+        position: sticky;
+        top: 0;
+    }
 `;
 
 const Inputs = styled.div`

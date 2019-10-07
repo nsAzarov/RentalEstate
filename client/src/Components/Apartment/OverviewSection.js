@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {device} from '../../services/device';
 
 import bathtub from '../../png/bathtub.png';
 import bed from '../../png/bed.png';
@@ -19,21 +20,34 @@ const OverviewBlock = styled.div`
         padding: 10px 20px;
     }
     #icons-area {
-        display: flex;
-        justify-content: space-between;
-        #bbg {
+        @media ${device.mobileS} {
             display: flex;
+            flex-direction: column;
+            justify-content: center;
+            #bbg {
+                display: flex;
+            }
+            #psk {
+                display: flex;
+            }
         }
-        #psk {
+        @media ${device.tablet} {
             display: flex;
+            flex-direction: row;
+            justify-content: space-between;
         }
     }
     .small-info {
+        @media ${device.mobileS} {
+            margin: 5px auto;
+        }
+        @media ${device.tablet} {
+            margin: 0 10px;
+        }
         display: flex;
         align-items: center;
 		font-weight: bold;
         font-size: 16px;
-		margin: 0 10px;
         img {
             height: 30px;
             margin-right: 5px;
