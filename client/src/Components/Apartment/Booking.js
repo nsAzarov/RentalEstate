@@ -173,7 +173,7 @@ function Booking(props) {
     const [guestsFormOpened, setGuestsFormOpened] = useState(false);
 
     useEffect(() => {
-        setNights(endDate.getDay() - startDate.getDay())
+        setNights(Math.ceil(Math.abs(endDate - startDate) / (1000*60*60*24)));
         setTotal(nights * props.pricePerNight);
     }, [startDate, endDate, nights, props.pricePerNight])
 
