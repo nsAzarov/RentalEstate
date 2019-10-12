@@ -1,29 +1,25 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import landscape from '../../png/landscape.jpg'
-import {device} from '../../services/device'
+import InputRange from 'react-input-range';
+import landscape from '../../png/landscape.jpg';
+import {device} from '../../services/device';
+import 'react-input-range/lib/css/index.css';
 
 const SearchSection = styled.div`
     @media ${device.mobileS} {
-        height: 135px;
-    }
-    @media ${device.mobileL} {
-        height: 150px;
+        height: 120px;
     }
     @media ${device.tablet} {
-        height: 220px;
+        height: 200px;
     }
     @media ${device.laptop} {
-        height: 280px;
+        height: 260px;
     }
     @media ${device.laptopL} {
-        height: 380px;
+        height: 350px;
     }
     @media ${device.desktop} {
-        height: 480px;
-    }
-    @media ${device.desktopL} {
-        height: 530px;
+        height: 440px;
     }
     width: 100%;
     background: url(${landscape});
@@ -33,234 +29,226 @@ const SearchSection = styled.div`
 
 const Form = styled.form`
     @media ${device.mobileS} {
-        width: 300px;
-        left: 50%;
-        margin-left: -150px;
-        height: 37px;
-        top: 85px;
-    }
-    @media ${device.mobileL} {
-        width: 400px;
-        margin-left: -200px;
-        top: 100px;
+        top: 60px;
+        width: 96%;
+        margin: 0 2%;
     }
     @media ${device.tablet} {
-        width: 700px;
-        margin-left: -350px;
-        height: 48px;
-        top: 150px;
+        top: 140px;
+        width: 90%;
+        margin: 0 5%;
+        display: flex;
+        align-items: center;
     }
     @media ${device.laptop} {
-        width: 1000px;
-        margin-left: -500px;
-        height: 58px;
-        top: 200px;
+        top: 180px;
+        width: 80%;
+        margin: 0 10%;
     }
     @media ${device.laptopL} {
-        top: 270px;
+        top: 250px;
+        width: 70%;
+        margin: 0 15%;
     }
     @media ${device.desktop} {
-        top: 350px;
-        height: 80px;
+        top: 340px;
+        width: 60%;
+        margin: 0 20%;
     }
-    @media ${device.desktopL} {
-        width: 1200px;
-        margin-left: -600px;
-        top: 390px;
-    }
-    background: whitesmoke;
-    margin: auto;
-    border-radius: 5px;
-    display: flex;
+    background: white;
     position: absolute;
-    .dropdown {
+    border-radius: 2px;
+    #topSideForm {
         @media ${device.mobileS} {
-            margin: 5px 0 0 5px;
-            padding: 8px;
-            font-size: 8px;
-            height: 9px;
-            width: 59px;
-        }
-        @media ${device.mobileL} {
-            font-size: 10px;
-            height: 10px;
-            width: 91px;
+            width: 100%;
         }
         @media ${device.tablet} {
-            margin: 8px 0 0 12px;
-            font-size: 12px;
-            height: 14px;
-            width: 120px;
+            width: 60%;
         }
-        @media ${device.laptop} {
-            margin: 10px 0 0 15px;
-            padding: 10px;
-            font-size: 14px;
-            height: 16px;
-            width: 150px;
-        }
-        @media ${device.desktop} {
-            margin: 15px 0 0 20px;
-            padding: 16px;
-            font-size: 16px;
-        }
-        width: 150px;
-        border: 1px solid black;
-        border-radius: 3px;
-        position: relative;
-        cursor: pointer;
-        ul {
+        display: flex;
+        align-items: center;
+        .dropdown {
             @media ${device.mobileS} {
-                top: 27px;
-                li {
+                width: 80px;
+                .menuItem {
                     padding: 5px;
-                    width: 64px;
+                    font-size: 12px;
+                }
+                ul {
+                    li {
+                        padding: 5px;
+                        width: 70px;
+                        font-size: 12px;
+                    }
                 }
             }
-            @media ${device.mobileL} {
+            @media ${device.laptopL} {
+                width: 150px;
+                .menuItem {
+                    padding: 10px;
+                    font-size: 16px;
+                }
+                ul {
+                    li {
+                        padding: 10px;
+                        width: 130px;
+                        font-size: 16px;
+                    }
+                }
+            }
+            height: 80%;
+            margin-left: 2%;
+            .menuItem {
+                border: 1px solid black;
+                border-radius: 2px;
+            }
+            ul {
+                position: absolute;
+                z-index: 100;
                 li {
-                    width: 96px;
+                    list-style-type: none;
+                    background: white;
+                    transition: .3s;
+                    &:hover {
+                        background: #3C90BE;
+                    }
+                }
+            }
+        }
+        #rangeBlock {
+            width: 45%;
+            @media ${device.mobileS} {
+                margin: 4px 5%;
+                .input-range {
+                    margin-top: 13px;
+                }
+                .input-range__label--value {
+                    top: -23px;
+                }
+                .input-range__label--min,
+                .input-range__label--max {
+                    bottom: 13px;
+                    position: absolute;
                 }
             }
             @media ${device.tablet} {
-                top: 32px;
-                li {
-                    padding: 8px;
-                    width: 120px;
+                .input-range {
+                    margin-top: 20px;
+                }
+                .input-range__label--value {
+                    top: -1.8rem;
+                }
+                .input-range__label--min,
+                .input-range__label--max {
+                    bottom: 20px;
+                    position: absolute;
                 }
             }
             @media ${device.laptop} {
-                top: 37px;
-                li {
-                    padding: 10px;
-                    width: 150px;
-                }
+                margin: 6px 5%;
+            }
+            @media ${device.laptopL} {
+                margin: 10px 5%;
             }
             @media ${device.desktop} {
-                top: 50px;
-                li {
-                    padding: 16px;
-                }
-            }
-            position: absolute;
-            left: 0px;
-            z-index: 10;
-            li {
-                background: whitesmoke;
-                list-style-type: none;
-                transition: 0.3s;
-                &:hover {
-                    background: #3C90BE;
-                }
+                margin: 14px 5%;
             }
         }
     }
-    button {
-        @media ${device.mobileS} {
-            font-size: 10px;
-            height: 37px;
-            width: 50px;
+    #sortPanel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .sortingOption {
+            @media ${device.mobileS} {
+                margin-right: 8px;
+                font-size: 14px;
+                img {
+                    margin-left: 4px;
+                    height: 14px;
+                }
+            }
+            @media ${device.laptopL} {
+                margin-right: 10px;
+                img {
+                    margin-left: 5px;
+                    height: 16px;
+                }
+            }
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+            img {
+                margin-left: 5px;
+                height: 16px;
+            }
         }
-        @media ${device.mobileL} {
-            font-size: 11px;
-            width: 54px;
+    }
+    #submit {
+        @media ${device.mobileS} {
+            font-size: 12px;
+            width: 18%;
         }
         @media ${device.tablet} {
-            font-size: 12px;
-            height: 48px;
-            width: 60px;
-        }
-        @media ${device.laptop} {
             font-size: 14px;
-            height: 58px;
-            width: 80px;
+            width: 10%;
         }
-        @media ${device.desktop} {
+        @media ${device.laptopL} {
             font-size: 16px;
-            height: 80px;
-            width: 100px;
         }
-        margin-left: auto;
+        position: absolute;
+        top: 0;
         right: 0;
-        background: #b3b3b3;
-        border: none;
-        border-radius: 3px;
-        transition: .2s;
-        &:hover {
-            background: #3C90BE;
-            color: white;
-        }
+        height: 100%;
+        width: 10%;
+        background: grey;
+        border-radius: 2px;
     }
 `;
 
 const Search = () => {
-    const [actionsOpen, setActionsOpen] = useState(false);
-    const [typesOpen, setTypesOpen] = useState(false);
+    const [rangeValue, setRangeValue] = useState({ min: 2, max: 10 });
     const [citiesOpen, setCitiesOpen] = useState(false);
-
-    const [action, setAction] = useState("All Actions");
-    const [type, setType] = useState("All Types");
     const [city, setCity] = useState("All Cities");
     return(
         <SearchSection>
             <Form>
-                <div className="dropdown form-control" onClick={() => {setTypesOpen(false);setCitiesOpen(false);setActionsOpen(!actionsOpen)}}>
-                    <div className="filter-menu-item">{action}</div>
-                    {actionsOpen ?
-                        <ul>
-                            <li onClick={() => {setAction("All Actions")}}>All Actions</li>
-                            <li onClick={() => {setAction("Rent Apartment")}}>Rent Apartment</li>
-                            <li onClick={() => {setAction("Book Hotel")}}>Book Hotel</li>
-                            <li onClick={() => {setAction("Buy Property")}}>Buy Property</li>
-                        </ul>
-                        :
-                        null
-                    }
-                </div>
-                <div className="dropdown form-control" onClick={() => {setActionsOpen(false);setCitiesOpen(false);setTypesOpen(!typesOpen)}}>
-                    <div className="filter-menu-item">{type}</div>
-                    {typesOpen ?
-                        <ul>
-                            <li onClick={() => {setType("All Types")}}>All Types</li>
-                            {action==="Rent Apartment" ?
-                            <>
-                            <li onClick={() => {setType("Luxary Apartments")}}>Luxary Apartments</li>
-                            <li onClick={() => {setType("Villa")}}>Villa</li>
-                            </>
+                <div id="topSideForm">
+                    <div className="dropdown" onClick={() => {setCitiesOpen(!citiesOpen)}}>
+                        <div className="menuItem">{city}</div>
+                        {citiesOpen ?
+                            <ul>
+                                <li onClick={() => {setCity("All Cities")}}>All Cities</li>
+                                <li onClick={() => {setCity("Tel Aviv")}}>Tel Aviv</li>
+                                <li onClick={() => {setCity("Jerusalem")}}>Jerusalem</li>
+                                <li onClick={() => {setCity("Herzliya")}}>Herzliya</li>
+                                <li onClick={() => {setCity("Safed")}}>Safed</li>
+                                <li onClick={() => {setCity("Tiberias")}}>Tiberias</li>
+                            </ul>
                             :
                             null
-                            }
-                            {action==="Book Hotel" ?
-                            <li onClick={() => {setType("Luxary Hotels")}}>Luxary Hotels</li>
-                            :
-                            null
-                            }
-                            {action==="Buy Property" ?
-                            <li onClick={() => {setType("New Projects")}}>New Projects</li>
-                            :
-                            null
-                            }
-                        </ul>
-                        :
-                        null
-                    }
+                        }
+                    </div>
+                    <div id="rangeBlock">
+                        <InputRange
+                            maxValue={20}
+                            minValue={0}
+                            value={rangeValue}
+                            onChange={value =>  setRangeValue(value) } />
+                    </div>
+                </div> 
+                <button id="submit" type="submit">Search</button>
+                <div id="sortPanel">
+                    <div className="sortingOption">
+                        Price<img src={require('../../png/arrow-bottom.png')}/>
+                    </div>
+                    <div className="sortingOption">
+                        Guests<img src={require('../../png/arrow-bottom.png')}/>
+                    </div>
+                    <div className="sortingOption">
+                        City<img src={require('../../png/arrow-bottom.png')}/>
+                    </div>
                 </div>
-                <div className="dropdown form-control" onClick={() => {setActionsOpen(false);setTypesOpen(false);setCitiesOpen(!citiesOpen)}}>
-                    <div className="filter-menu-item">{city}</div>
-                    {citiesOpen ?
-                        <ul>
-                            <li onClick={() => {setCity("All Cities")}}>All Cities</li>
-                            <li onClick={() => {setCity("Tel Aviv")}}>Tel Aviv</li>
-                            <li onClick={() => {setCity("Jerusalem")}}>Jerusalem</li>
-                            <li onClick={() => {setCity("Herzliya")}}>Herzliya</li>
-                            <li onClick={() => {setCity("Safed")}}>Safed</li>
-                            <li onClick={() => {setCity("Tiberias")}}>Tiberias</li>
-                        </ul>
-                        :
-                        null
-                    }
-                </div>
-                <button type="submit">Search</button>
             </Form>
         </SearchSection>
     );

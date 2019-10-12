@@ -35,17 +35,38 @@ const ItemBlock = styled(Link)`
 	@media ${device.laptopL} {
         width: 23.8%;
         margin: 0.6%;
-        height: 380px;
-	}
-    @media ${device.desktop} {
-        width: 19.2%;
-		margin: 0.4%;
+        height: 410px;
 	}
 	@media ${device.desktopL} {
-		height: 410px;
+		width: 19.2%;
+		margin: 0.4%;
 	}
 	background: whitesmoke;
 	position: relative;
+`;
+
+const ImageSection = styled.div`
+	@media ${device.mobileS} {
+		height: 110px;
+	}
+	@media ${device.mobileL} {
+		height: 160px;
+	}
+	@media ${device.tablet} {
+		height: 190px;
+	}
+	@media ${device.laptop} {
+		height: 180px;
+	}
+	@media ${device.laptopL} {
+		height: 280px;
+	}
+	@media ${device.desktopL} {
+		height: 280px;
+	}
+	width: 100%;
+	background: url(${props => props.backgroundImage}) no-repeat;
+	background-size: cover;
 `;
 
 const City = styled.div`
@@ -71,39 +92,12 @@ const City = styled.div`
 		font-size: 15px;
 	}
 	@media ${device.laptopL} {
-		top: 180px;
+		top: 200px;
 		padding: 8px 20px 8px 8px;
 		font-size: 16px;
 	}
-	@media ${device.desktopL} {
-		top: 200px;
-	}
 	background: #f0cb86;
 	border-radius: 1px;
-`;
-
-const ImageSection = styled.div`
-	@media ${device.mobileS} {
-		height: 110px;
-	}
-	@media ${device.mobileL} {
-		height: 160px;
-	}
-	@media ${device.tablet} {
-		height: 190px;
-	}
-	@media ${device.laptop} {
-		height: 180px;
-	}
-	@media ${device.laptopL} {
-		height: 250px;
-	}
-	@media ${device.desktopL} {
-		height: 280px;
-	}
-	width: 100%;
-	background: url(${props => props.backgroundImage}) no-repeat;
-	background-size: cover;
 `;
 
 const Title = styled.h1`
@@ -151,13 +145,11 @@ const Description = styled.h2`
 	@media ${device.laptopL} {
 		font-size: 12px;
 	}
-	margin-left: 5px;
-	text-indent: 5px;
+	text-align: center;
 	font-style: italic;
     text-overflow: ellipsis;
     overflow: hidden;
     -webkit-line-clamp: 3;
-    display: -webkit-box;
     word-wrap: break-word;
     -webkit-box-orient: vertical;
 `;

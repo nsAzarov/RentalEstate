@@ -14,15 +14,12 @@ const AdContent = styled.div`
         height: 280px;
     }
     @media ${device.laptopL} {
-        height: 380px;
+        height: 410px;
 	}
-    @media ${device.desktop} {
+    @media ${device.desktopL} {
         width: 19.2%;
 		margin: 0.4%;
     }
-    @media ${device.desktopL} {
-        height: 410px;
-	}
     background: url(${props => props.ad}) no-repeat;
     background-size: cover;
     position: relative;
