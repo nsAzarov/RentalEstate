@@ -26,20 +26,27 @@ const ItemBlock = styled(Link)`
 	@media ${device.tablet} {
         width: 31.5%;
 		margin: 0.9%;
-		height: 280px;
+		height: 260px;
 	}
 	@media ${device.laptop} {
         width: 23.8%;
 		margin: 0.6%;
+		height: 280px;
 	}
 	@media ${device.laptopL} {
         width: 23.8%;
         margin: 0.6%;
-        height: 410px;
+        height: 370px;
+	}
+	@media ${device.desktop} {
+        width: 23.8%;
+        margin: 0.6%;
+        height: 420px;
 	}
 	@media ${device.desktopL} {
 		width: 19.2%;
 		margin: 0.4%;
+		height: 410px;
 	}
 	background: whitesmoke;
 	position: relative;
@@ -53,13 +60,16 @@ const ImageSection = styled.div`
 		height: 150px;
 	}
 	@media ${device.tablet} {
-		height: 190px;
+		height: 170px;
 	}
 	@media ${device.laptop} {
 		height: 180px;
 	}
 	@media ${device.laptopL} {
-		height: 280px;
+		height: 240px;
+	}
+	@media ${device.desktop} {
+		height: 290px;
 	}
 	@media ${device.desktopL} {
 		height: 280px;
@@ -83,7 +93,7 @@ const City = styled.div`
 		font-size: 12px;
 	}
 	@media ${device.tablet} {
-		top: 135px;
+		top: 120px;
 		padding: 5px 12px 5px 5px;
 		font-size: 14px;
 	}
@@ -92,9 +102,12 @@ const City = styled.div`
 		font-size: 15px;
 	}
 	@media ${device.laptopL} {
-		top: 200px;
+		top: 170px;
 		padding: 8px 20px 8px 8px;
 		font-size: 16px;
+	}
+	@media ${device.desktop} {
+		top: 220px;
 	}
 	background: #f0cb86;
 	border-radius: 1px;
