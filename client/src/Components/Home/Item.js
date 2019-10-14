@@ -10,7 +10,7 @@ const ItemBlock = styled(Link)`
 	@media ${device.mobileS} {
 		width: 49%;
 		margin: 0.5%;
-		height: 170px;
+		height: 160px;
 		transition: .3s;
 		&:hover {
 			-webkit-box-shadow: 0px 0px 10px 0px rgba(240,203,134,1);
@@ -21,7 +21,7 @@ const ItemBlock = styled(Link)`
 	@media ${device.mobileL} {
 		width: 48%;
 		margin: 1%;
-		height: 235px;
+		height: 210px;
 	}
 	@media ${device.tablet} {
         width: 31.5%;
@@ -50,7 +50,7 @@ const ImageSection = styled.div`
 		height: 110px;
 	}
 	@media ${device.mobileL} {
-		height: 160px;
+		height: 150px;
 	}
 	@media ${device.tablet} {
 		height: 190px;
@@ -102,13 +102,12 @@ const City = styled.div`
 
 const Title = styled.h1`
 	@media ${device.mobileS} {
-		font-size: 14px;
+		font-size: 12px;
 		margin: 0 0 3px 0;
 		-webkit-line-clamp: 2;
 		text-align: center;
 	}
 	@media ${device.mobileL} {
-		font-size: 16px;
 		margin: 0 0 5px 0;
 	}
 	@media ${device.tablet} {

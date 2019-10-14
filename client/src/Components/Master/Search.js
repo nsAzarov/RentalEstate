@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
 import InputRange from 'react-input-range';
 import landscape from '../../png/landscape.jpg';
@@ -162,11 +163,14 @@ const Form = styled.form`
         .sortingOption {
             @media ${device.mobileS} {
                 margin-right: 8px;
-                font-size: 14px;
+                font-size: 12px;
                 img {
                     margin-left: 4px;
-                    height: 14px;
+                    height: 10px;
                 }
+            }
+            @media ${device.tablet} {
+                font-size: 13px;
             }
             @media ${device.laptopL} {
                 margin-right: 10px;
@@ -178,13 +182,9 @@ const Form = styled.form`
             display: flex;
             align-items: center;
             margin-right: 10px;
-            img {
-                margin-left: 5px;
-                height: 16px;
-            }
         }
     }
-    #submit {
+    #search {
         @media ${device.mobileS} {
             font-size: 12px;
             width: 18%;
@@ -201,8 +201,13 @@ const Form = styled.form`
         right: 0;
         height: 100%;
         width: 10%;
-        background: grey;
+        background: #a5a5a5;
         border-radius: 2px;
+        transition: .3s;
+        &:hover {
+            background: #3C90BE;
+            color: white;
+        }
     }
 `;
 
@@ -210,6 +215,11 @@ const Search = () => {
     const [rangeValue, setRangeValue] = useState({ min: 2, max: 10 });
     const [citiesOpen, setCitiesOpen] = useState(false);
     const [city, setCity] = useState("All Cities");
+    const SendRequest = (e) => {
+        e.preventDefault();
+        axios.post('/', {city})
+            .then(res => console.log(res));
+    }
     return(
         <SearchSection>
             <Form>
@@ -237,16 +247,16 @@ const Search = () => {
                             onChange={value =>  setRangeValue(value) } />
                     </div>
                 </div> 
-                <button id="submit" type="submit">Search</button>
+                <button id="search" type="submit" onClick={(e) => {SendRequest(e)}}>Search</button>
                 <div id="sortPanel">
                     <div className="sortingOption">
-                        Price<img src={require('../../png/arrow-bottom.png')}/>
+                        Price<img src={require('../../png/arrow-bottom.png')} alt=""/>
                     </div>
                     <div className="sortingOption">
-                        Guests<img src={require('../../png/arrow-bottom.png')}/>
+                        Guests<img src={require('../../png/arrow-bottom.png')} alt=""/>
                     </div>
                     <div className="sortingOption">
-                        City<img src={require('../../png/arrow-bottom.png')}/>
+                        City<img src={require('../../png/arrow-bottom.png')} alt=""/>
                     </div>
                 </div>
             </Form>

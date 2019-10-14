@@ -1,11 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 const cors = require('cors');
 const axios = require('axios');
 
 const app = express();
 
 app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 const db = require('./config/keys').mongoURI;
 
@@ -15,6 +18,10 @@ mongoose
     .catch(err => console.log(err));
 
 const Apartment = require('./models/Apartment');
+
+app.post('/', (req, res) => {
+    res.send(req.body);
+})
 
 app.get('/Home', (req, res) => {
     Apartment.find({})

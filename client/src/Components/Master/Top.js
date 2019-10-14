@@ -122,7 +122,7 @@ const Top = () => {
                 <h1>Rental Estate</h1>
             </Logo>
             <Link to='/'>Sale Properties</Link>
-            <Link to='/'>Rentals</Link>
+            <Link to='/'>Israeli Rentals</Link>
             <Link to='/'>Vacation Properties</Link>
             <Link to='/'>Luxury Apartments</Link>
             <Link to='/'>Agencies</Link>
